@@ -58,17 +58,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="section-spacing">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <StatBlock value="94%" label="Concept Retention" delay={0} />
-            <StatBlock value="1.2M" label="Simulations Run" delay={0.1} />
-            <StatBlock value="340+" label="Institutions" delay={0.2} />
-            <StatBlock value="98%" label="Educator Satisfaction" delay={0.3} />
-          </div>
-        </div>
-      </section>
 
       {/* A New Era */}
       <section className="section-spacing">
@@ -121,9 +110,9 @@ const Index = () => {
                     </div>
                   ))}
                 </div>
-                <Link to="/schools" className="font-display text-sm font-medium text-accent hover:underline tracking-tight">
-                  Learn more →
-                </Link>
+                <a href="https://genz-lab-hq.lovable.app" target="_blank" rel="noopener noreferrer" className="inline-flex rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition-colors duration-500 hover:bg-accent/80 font-display tracking-tight">
+                  Learn More
+                </a>
               </WisdomCard>
             </AnimatedSection>
 
@@ -146,9 +135,9 @@ const Index = () => {
                     </div>
                   ))}
                 </div>
-                <Link to="/universities" className="font-display text-sm font-medium text-amber hover:underline tracking-tight">
-                  Learn more →
-                </Link>
+                <a href="https://wisdomforge-ai.lovable.app" target="_blank" rel="noopener noreferrer" className="inline-flex rounded-full bg-amber px-5 py-2.5 text-sm font-medium text-background transition-colors duration-500 hover:bg-amber/80 font-display tracking-tight">
+                  Learn More
+                </a>
               </WisdomCard>
             </AnimatedSection>
           </div>
