@@ -24,7 +24,7 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold text-foreground mb-4 tracking-tight">Connect</h4>
             <div className="flex flex-col gap-3">
-              <span className="font-body text-sm text-muted-foreground">hello@houseofwisdom.edu</span>
+              <span className="font-body text-sm text-muted-foreground">hello@howschool.online</span>
               <span className="font-body text-sm text-muted-foreground">LinkedIn</span>
               <span className="font-body text-sm text-muted-foreground">Twitter</span>
             </div>
