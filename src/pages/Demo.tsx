@@ -31,11 +31,11 @@ const Demo = () => {
           <div className="max-w-2xl mx-auto">
             <AnimatedSection className="text-center mb-12">
               <h1 className="text-display text-4xl md:text-6xl font-extrabold text-balance mb-6">
-                See House of Wisdom{" "}
+                See House of Wisdom (HOW){" "}
                 <span className="gradient-text-primary">in Action</span>
               </h1>
               <p className="font-body text-lg text-muted-foreground text-pretty">
-                Discover how House of Wisdom can help your institution create engaging learning environments and prepare students for future careers.
+                Discover how House of Wisdom (HOW) can help your institution create engaging learning environments and prepare students for future careers.
               </p>
             </AnimatedSection>
 
@@ -61,7 +61,7 @@ const Demo = () => {
                       required
                       value={form[field.key as keyof typeof form]}
                       onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
-                      className="w-full rounded-2xl border border-border bg-background/60 px-5 py-3.5 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all"
+                      className="w-full rounded-2xl border border-border bg-muted/50 px-5 py-3.5 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all"
                     />
                   </div>
                 ))}

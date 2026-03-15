@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { Atom, BookOpen, BrainCircuit, Code2, GraduationCap, LineChart, Lightbulb, Target, TrendingUp, Users } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -37,12 +38,13 @@ const Index = () => {
             animate={{ filter: "blur(0px)", opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
+            <img src={logo} alt="House of Wisdom (HOW) logo" className="w-28 h-28 rounded-3xl mx-auto mb-10 shadow-2xl ring-2 ring-primary/20" />
             <h1 className="text-display text-[clamp(3rem,10vw,8rem)] font-extrabold text-balance">
               Where Learning <br />
               <span className="gradient-text-primary">Meets Real-World</span>
             </h1>
             <p className="font-body text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mt-8 text-pretty leading-relaxed">
-              House of Wisdom helps schools and universities create engaging learning environments where students understand concepts deeply, practice real-world applications, and prepare confidently for the careers of tomorrow.
+              House of Wisdom (HOW) helps schools and universities create engaging learning environments where students understand concepts deeply, practice real-world applications, and prepare confidently for the careers of tomorrow.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
               <WisdomButton size="lg" onClick={() => navigate("/demo")}>
@@ -80,7 +82,7 @@ const Index = () => {
               Students today need more than theoretical knowledge. They need environments where ideas can be explored, tested, and applied.
             </p>
             <p className="font-body text-lg text-muted-foreground text-pretty leading-relaxed">
-              House of Wisdom provides institutions with a modern learning platform that combines interactive learning, guided practice, and career-focused skill development.
+              House of Wisdom (HOW) provides institutions with a modern learning platform that combines interactive learning, guided practice, and career-focused skill development.
             </p>
           </AnimatedSection>
         </div>
@@ -163,7 +165,7 @@ const Index = () => {
               <span className="gradient-text-amber">Opportunity</span>
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              House of Wisdom integrates placement readiness directly into the learning environment.
+              House of Wisdom (HOW) integrates placement readiness directly into the learning environment.
             </p>
           </AnimatedSection>
 
@@ -237,7 +239,7 @@ const Index = () => {
                     <span className="gradient-text-accent">Educators</span>
                   </h2>
                   <p className="font-body text-muted-foreground text-pretty leading-relaxed">
-                    House of Wisdom supports educators by providing visibility into student progress and learning patterns. These insights help educators guide students more effectively.
+                    House of Wisdom (HOW) supports educators by providing visibility into student progress and learning patterns. These insights help educators guide students more effectively.
                   </p>
                 </div>
                 <div className="space-y-6">
