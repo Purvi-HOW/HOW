@@ -110,9 +110,9 @@ const Index = () => {
                     </div>
                   ))}
                 </div>
-                <Link to="/schools" className="font-display text-sm font-medium text-accent hover:underline tracking-tight">
-                  Learn more →
-                </Link>
+                <a href="https://genz-lab-hq.lovable.app" target="_blank" rel="noopener noreferrer" className="inline-flex rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition-colors duration-500 hover:bg-accent/80 font-display tracking-tight">
+                  Learn More
+                </a>
               </WisdomCard>
             </AnimatedSection>
 
