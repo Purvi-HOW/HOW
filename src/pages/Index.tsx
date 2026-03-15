@@ -58,17 +58,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="section-spacing">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <StatBlock value="94%" label="Concept Retention" delay={0} />
-            <StatBlock value="1.2M" label="Simulations Run" delay={0.1} />
-            <StatBlock value="340+" label="Institutions" delay={0.2} />
-            <StatBlock value="98%" label="Educator Satisfaction" delay={0.3} />
-          </div>
-        </div>
-      </section>
 
       {/* A New Era */}
       <section className="section-spacing">
