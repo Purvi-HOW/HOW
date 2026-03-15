@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import logo from "@/assets/logo.jpeg";
 
 const Navbar = () => {
   const location = useLocation();
@@ -18,9 +19,12 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="fixed top-0 left-0 right-0 z-50 glass-surface"
     >
-      <div className="container mx-auto flex items-center justify-between px-6 py-4">
-        <Link to="/" className="font-display text-xl font-bold tracking-tighter text-foreground">
-          House of Wisdom
+      <div className="container mx-auto flex items-center justify-between px-6 py-3">
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logo} alt="House of Wisdom (HOW) logo" className="h-10 w-10 rounded-lg object-cover" />
+          <span className="font-display text-xl font-bold tracking-tighter text-foreground">
+            House of Wisdom <span className="text-primary">(HOW)</span>
+          </span>
         </Link>
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
@@ -39,7 +43,7 @@ const Navbar = () => {
         </div>
         <Link
           to="/demo"
-          className="hidden md:inline-flex rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors duration-500 hover:bg-primary font-display tracking-tight"
+          className="hidden md:inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors duration-500 hover:bg-primary/80 font-display tracking-tight"
         >
           Get Started
         </Link>

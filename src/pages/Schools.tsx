@@ -27,7 +27,7 @@ const Schools = () => {
               <span className="gradient-text-accent">for Schools</span>
             </h1>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-              Science becomes meaningful when students can see, explore, and experiment with ideas. House of Wisdom helps schools create engaging science learning environments.
+              Science becomes meaningful when students can see, explore, and experiment with ideas. House of Wisdom (HOW) helps schools create engaging science learning environments.
             </p>
           </AnimatedSection>
         </div>

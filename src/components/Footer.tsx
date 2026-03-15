@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border/50 bg-foreground/[0.02]">
+    <footer className="border-t border-border/50 bg-muted/30">
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
             <h3 className="font-display text-2xl font-bold tracking-tighter text-foreground mb-4">
-              House of Wisdom
+              House of Wisdom <span className="text-primary">(HOW)</span>
             </h3>
             <p className="font-body text-muted-foreground max-w-md text-pretty">
               Advancing learning environments for the next generation of students.
@@ -32,7 +32,7 @@ const Footer = () => {
         </div>
         <div className="mt-16 pt-8 border-t border-border/30 flex justify-between items-center">
           <p className="font-body text-xs text-muted-foreground">
-            &copy; 2026 House of Wisdom. All rights reserved.
+            &copy; 2026 House of Wisdom (HOW). All rights reserved.
           </p>
           <div className="flex gap-6">
             <span className="font-body text-xs text-muted-foreground">Privacy</span>

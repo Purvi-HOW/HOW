@@ -27,7 +27,7 @@ const Universities = () => {
               <span className="gradient-text-amber">for Universities</span>
             </h1>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-              University education must connect theory with real-world application. House of Wisdom provides interactive environments for practical skill development.
+              University education must connect theory with real-world application. House of Wisdom (HOW) provides interactive environments for practical skill development.
             </p>
           </AnimatedSection>
         </div>
