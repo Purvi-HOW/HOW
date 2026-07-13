@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
 
 const Navbar = () => {
@@ -7,33 +8,32 @@ const Navbar = () => {
 
   const links = [
     { to: "/", label: "Home" },
-    { to: "/schools", label: "For Schools" },
-    { to: "/universities", label: "For Universities" },
-    { to: "/demo", label: "Request Demo" },
+    { to: "/schools", label: "Schools" },
+    { to: "/universities", label: "Universities" },
   ];
 
   return (
     <motion.nav
-      initial={{ y: -20, opacity: 0 }}
+      initial={{ y: -12, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-0 left-0 right-0 z-50 glass-surface"
+      className="fixed top-4 left-4 right-4 z-50"
     >
-      <div className="container mx-auto flex items-center justify-between px-6 py-3">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="House of Wisdom (HOW) logo" className="h-10 w-10 rounded-lg object-cover" />
-          <span className="font-display text-xl font-bold tracking-tighter text-foreground">
-            House of Wisdom <span className="text-primary">(HOW)</span>
+      <div className="panel mx-auto max-w-6xl flex items-center justify-between pl-3 pr-3 py-2.5">
+        <Link to="/" className="flex items-center gap-2.5">
+          <img src={logo} alt="House of Wisdom logo" className="h-9 w-9 rounded-lg object-cover ring-1 ring-primary/30" />
+          <span className="font-display text-sm font-semibold tracking-tight text-foreground leading-tight">
+            House of Wisdom<span className="text-primary"> (HOW)</span>
           </span>
         </Link>
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-1">
           {links.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className={`font-body text-sm tracking-tight transition-colors duration-300 ${
+              className={`rounded-full px-3.5 py-1.5 text-xs font-medium tracking-tight transition-colors duration-300 font-body ${
                 location.pathname === link.to
-                  ? "text-primary font-medium"
+                  ? "text-foreground bg-muted"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -43,9 +43,12 @@ const Navbar = () => {
         </div>
         <Link
           to="/demo"
-          className="hidden md:inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors duration-500 hover:bg-primary/80 font-display tracking-tight"
+          className="inline-flex items-center gap-1.5 rounded-full bg-primary pl-4 pr-2 py-2 text-xs font-semibold text-primary-foreground transition hover:bg-primary/90 font-display"
         >
-          Get Started
+          Request Demo
+          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-background/20">
+            <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.5} />
+          </span>
         </Link>
       </div>
     </motion.nav>
