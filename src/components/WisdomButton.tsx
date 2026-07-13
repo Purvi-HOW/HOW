@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 interface WisdomButtonProps {
   children: ReactNode;
-  variant?: "primary" | "outline" | "ghost";
+  variant?: "primary" | "outline" | "ghost" | "brand";
   size?: "default" | "lg";
   onClick?: () => void;
   className?: string;
@@ -14,6 +14,7 @@ interface WisdomButtonProps {
 
 const variants = {
   primary: "bg-primary text-primary-foreground hover:bg-primary/90",
+  brand: "gradient-brand-bg text-background hover:brightness-110",
   outline: "bg-transparent border border-border text-foreground hover:border-primary hover:text-primary",
   ghost: "text-foreground hover:text-primary",
 };
@@ -35,15 +36,16 @@ const WisdomButton = ({
   return (
     <motion.button
       type={type}
-      whileHover={{ scale: 1.02 }}
+      whileHover={{ y: -1 }}
       whileTap={{ scale: 0.98 }}
+      transition={{ duration: 0.2, ease: [0.2, 0.7, 0.1, 1] }}
       onClick={onClick}
-      className={`inline-flex items-center gap-2.5 rounded-full font-display font-semibold tracking-tight transition-colors duration-300 ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`inline-flex items-center gap-2.5 rounded-full font-medium tracking-tight transition-colors ${variants[variant]} ${sizes[size]} ${className}`}
     >
       {children}
       {arrow && (
         <span className={`inline-flex ${size === "lg" ? "h-8 w-8" : "h-7 w-7"} items-center justify-center rounded-full ${
-          variant === "primary" ? "bg-background/20" : "bg-muted"
+          variant === "primary" || variant === "brand" ? "bg-background/20" : "bg-muted"
         }`}>
           <ArrowUpRight className={size === "lg" ? "h-4 w-4" : "h-3.5 w-3.5"} strokeWidth={2.5} />
         </span>

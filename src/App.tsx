@@ -4,9 +4,9 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
-import Schools from "./pages/Schools.tsx";
-import Universities from "./pages/Universities.tsx";
-import Demo from "./pages/Demo.tsx";
+import Colleges from "./pages/Colleges.tsx";
+import Partners from "./pages/Partners.tsx";
+import Waitlist from "./pages/Waitlist.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -19,9 +19,13 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/schools" element={<Schools />} />
-          <Route path="/universities" element={<Universities />} />
-          <Route path="/demo" element={<Demo />} />
+          <Route path="/colleges" element={<Colleges />} />
+          <Route path="/partners" element={<Partners />} />
+          <Route path="/waitlist" element={<Waitlist />} />
+          {/* Legacy routes */}
+          <Route path="/schools" element={<Colleges />} />
+          <Route path="/universities" element={<Partners />} />
+          <Route path="/demo" element={<Waitlist />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
