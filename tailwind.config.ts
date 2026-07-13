@@ -12,8 +12,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Sora"', 'sans-serif'],
-        body: ['"Instrument Sans"', 'sans-serif'],
+        display: ['"Geist"', 'sans-serif'],
+        body: ['"Geist"', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
@@ -27,7 +27,10 @@ export default {
         destructive: { DEFAULT: "hsl(var(--destructive))", foreground: "hsl(var(--destructive-foreground))" },
         muted: { DEFAULT: "hsl(var(--muted))", foreground: "hsl(var(--muted-foreground))" },
         accent: { DEFAULT: "hsl(var(--accent))", foreground: "hsl(var(--accent-foreground))" },
-        amber: { DEFAULT: "hsl(var(--accent-amber))", foreground: "hsl(var(--accent-amber-foreground))" },
+        violet: "hsl(var(--violet))",
+        peach: "hsl(var(--peach))",
+        "cyan-signal": "hsl(var(--cyan-signal))",
+        sage: "hsl(var(--sage))",
         popover: { DEFAULT: "hsl(var(--popover))", foreground: "hsl(var(--popover-foreground))" },
         card: { DEFAULT: "hsl(var(--card))", foreground: "hsl(var(--card-foreground))" },
         sidebar: {
