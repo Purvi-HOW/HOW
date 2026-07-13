@@ -7,9 +7,9 @@ const Navbar = () => {
   const location = useLocation();
 
   const links = [
-    { to: "/", label: "Home" },
-    { to: "/schools", label: "Schools" },
-    { to: "/universities", label: "Universities" },
+    { to: "/", label: "House" },
+    { to: "/colleges", label: "For Colleges" },
+    { to: "/partners", label: "Partners & Mentors" },
   ];
 
   return (
@@ -21,9 +21,9 @@ const Navbar = () => {
     >
       <div className="panel mx-auto max-w-6xl flex items-center justify-between pl-3 pr-3 py-2.5">
         <Link to="/" className="flex items-center gap-2.5">
-          <img src={logo} alt="House of Wisdom logo" className="h-9 w-9 rounded-lg object-cover ring-1 ring-primary/30" />
+          <img src={logo} alt="House of Wise" className="h-9 w-9 rounded-md object-cover ring-1 ring-primary/30" />
           <span className="font-display text-sm font-semibold tracking-tight text-foreground leading-tight">
-            House of Wisdom<span className="text-primary"> (HOW)</span>
+            House of Wise <span className="text-muted-foreground font-mono text-xs">· HOW</span>
           </span>
         </Link>
         <div className="hidden md:flex items-center gap-1">
@@ -31,7 +31,7 @@ const Navbar = () => {
             <Link
               key={link.to}
               to={link.to}
-              className={`rounded-full px-3.5 py-1.5 text-xs font-medium tracking-tight transition-colors duration-300 font-body ${
+              className={`rounded-full px-3.5 py-1.5 text-xs font-medium tracking-tight transition-colors duration-300 ${
                 location.pathname === link.to
                   ? "text-foreground bg-muted"
                   : "text-muted-foreground hover:text-foreground"
@@ -42,11 +42,11 @@ const Navbar = () => {
           ))}
         </div>
         <Link
-          to="/demo"
-          className="inline-flex items-center gap-1.5 rounded-full bg-primary pl-4 pr-2 py-2 text-xs font-semibold text-primary-foreground transition hover:bg-primary/90 font-display"
+          to="/waitlist"
+          className="inline-flex items-center gap-1.5 rounded-full bg-primary pl-4 pr-2 py-2 text-xs font-semibold text-primary-foreground transition hover:bg-primary/90"
         >
-          Request Demo
-          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-background/20">
+          Join the waitlist
+          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-background/25">
             <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.5} />
           </span>
         </Link>
