@@ -211,20 +211,28 @@ const Index = () => {
             </p>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-14">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7 mt-14 auto-rows-fr">
             {journey.map((j, i) => (
-              <AnimatedSection key={j.layer} delay={i * 0.04}>
-                <div className="panel p-6 h-full">
+              <AnimatedSection key={j.layer} delay={i * 0.04} className="h-full">
+                <div className="panel group relative h-full min-h-[240px] p-7 flex flex-col overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_30px_80px_-30px_hsl(325_68%_45%/0.45)]">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full gradient-brand-bg opacity-0 group-hover:opacity-10 blur-3xl transition-opacity duration-500" />
                   <div className="flex items-center justify-between">
                     <span className="font-mono-label text-primary">{j.layer}</span>
                     <span className="font-mono-label text-muted-foreground">{j.tag}</span>
                   </div>
-                  <h3 className="mt-6 text-2xl font-semibold">{j.title}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{j.body}</p>
+                  <div className="mt-6 h-px w-10 gradient-brand-bg rounded-full" />
+                  <h3 className="mt-5 text-2xl font-semibold tracking-tight">{j.title}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed flex-1">{j.body}</p>
+                  <div className="mt-6 flex items-center justify-between hairline-t pt-4">
+                    <span className="font-mono-label text-muted-foreground tabular-nums">0{i} → 0{i + 1}</span>
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary/70 group-hover:bg-primary transition-colors" />
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
           </div>
+
         </div>
       </section>
 
