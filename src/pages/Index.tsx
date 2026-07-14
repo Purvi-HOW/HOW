@@ -50,8 +50,8 @@ const Index = () => {
             <EyebrowLabel index="01">AI-readiness movement · India</EyebrowLabel>
           </AnimatedSection>
 
-          <div className="grid lg:grid-cols-12 gap-10 mt-8">
-            <div className="lg:col-span-8">
+          <div className="mt-8">
+            <div className="max-w-5xl">
               <AnimatedSection delay={0.05}>
                 <h1 className="text-display text-5xl md:text-7xl lg:text-[5.5rem] font-semibold text-balance">
                   India's <span className="gradient-brand-text">AI-ready student</span> movement starts here.
@@ -64,8 +64,8 @@ const Index = () => {
               </AnimatedSection>
               <AnimatedSection delay={0.25}>
                 <div className="flex flex-wrap items-center gap-3 mt-10">
-                  <Link to="/waitlist"><WisdomButton variant="brand" size="lg">Join the student waitlist</WisdomButton></Link>
-                  <Link to="/colleges"><WisdomButton variant="outline" size="lg">Bring HOW to your college</WisdomButton></Link>
+                  <Link to="/colleges"><WisdomButton variant="brand" size="lg">Bring HOW to your College</WisdomButton></Link>
+                  <Link to="/waitlist"><WisdomButton variant="outline" size="lg">Join Student Waitlist</WisdomButton></Link>
                   <Link to="/partners"><WisdomButton variant="ghost" size="lg" arrow={false}>Become a mentor or partner →</WisdomButton></Link>
                 </div>
               </AnimatedSection>
@@ -75,99 +75,16 @@ const Index = () => {
                 </p>
               </AnimatedSection>
             </div>
-
-            {/* Readiness Profile Card */}
-            <AnimatedSection delay={0.35} className="lg:col-span-4">
-              <div className="panel p-6">
-                <div className="flex items-center justify-between hairline-b pb-4">
-                  <span className="font-mono-label text-muted-foreground">Readiness profile</span>
-                  <span className="font-mono-label text-muted-foreground">HOW · 2026</span>
-                </div>
-                <div className="flex items-center gap-4 mt-5">
-                  <div className="h-12 w-12 rounded-full gradient-brand-bg text-background flex items-center justify-center font-semibold">AR</div>
-                  <div>
-                    <p className="font-medium text-foreground leading-tight">Ananya R.</p>
-                    <p className="text-xs text-muted-foreground mt-1">BBA · 2nd Year · AI Builder</p>
-                  </div>
-                </div>
-
-                <div className="mt-6">
-                  <div className="flex items-center justify-between text-xs mb-2">
-                    <span className="font-mono-label text-muted-foreground">HOW Score</span>
-                    <span className="font-mono text-foreground tabular-nums">720 / 1000</span>
-                  </div>
-                  <div className="h-2 rounded-full bg-muted overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: "72%" }}
-                      transition={{ duration: 1.2, ease: [0.2, 0.7, 0.1, 1], delay: 0.6 }}
-                      className="h-full gradient-brand-bg"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-3 gap-3 mt-6">
-                  {[
-                    { l: "Projects", v: "3" },
-                    { l: "Portfolio", v: "Ready" },
-                    { l: "Demo Day", v: "Eligible" },
-                  ].map((s) => (
-                    <div key={s.l} className="hairline rounded-md p-3">
-                      <p className="font-mono-label text-muted-foreground">{s.l}</p>
-                      <p className="text-foreground mt-1.5 text-sm font-medium">{s.v}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-6 hairline-t pt-4">
-                  <p className="font-mono-label text-muted-foreground">Latest project</p>
-                  <p className="text-foreground mt-2 font-medium">Campus Helpdesk Bot</p>
-                  <div className="flex gap-1.5 mt-3 flex-wrap">
-                    {["ChatGPT", "Sheets", "Python"].map((t) => (
-                      <span key={t} className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded bg-muted text-muted-foreground">{t}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* PROOF LINE */}
-      <section className="relative pb-24">
-        <div className="container mx-auto px-6">
-          <AnimatedSection>
-            <div className="panel p-8 md:p-12">
-              <EyebrowLabel index="02">The movement</EyebrowLabel>
-              <h2 className="mt-6 text-display text-3xl md:text-5xl text-balance max-w-4xl">
-                Built for the generation graduating into an AI-first economy. Every student needs more than awareness — they need <span className="gradient-brand-text">visible proof of readiness</span>.
-              </h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mt-10">
-                {[
-                  "AI Readiness Score",
-                  "Project Portfolios",
-                  "Campus Cohorts",
-                  "Mentor Network",
-                  "Career Tracks",
-                  "Builder Community",
-                ].map((item, i) => (
-                  <div key={item} className="hairline rounded-md p-4">
-                    <p className="font-mono-label text-muted-foreground">0{i + 1}</p>
-                    <p className="text-foreground mt-2 font-medium text-sm">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
       {/* THREE WAYS IN */}
       <section className="relative py-24">
         <div className="container mx-auto px-6">
           <AnimatedSection>
-            <EyebrowLabel index="03">Three ways in</EyebrowLabel>
+            <EyebrowLabel index="02">Three ways in</EyebrowLabel>
             <h2 className="mt-6 text-display text-4xl md:text-6xl text-balance max-w-3xl">
               Enter the movement from where you are.
             </h2>
@@ -175,9 +92,10 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-6 mt-14">
             {[
-              { n: "01", t: "For Students", h: "Become AI-ready, not just AI-aware.", b: "Learn AI. Build projects. Earn your HOW Score. Join a serious community of future-ready students.", cta: "Join the waitlist", to: "/waitlist" },
-              { n: "02", t: "For Colleges", h: "Bring measurable readiness to campus.", b: "A structured AI-readiness program with curriculum, projects, faculty enablement, dashboards, and measurable outcomes.", cta: "Explore the program", to: "/colleges" },
+              { n: "01", t: "For Students", h: "Become AI-ready, not just AI-aware.", b: "Learn AI. Build projects. Earn your HOW Score. Join a serious community of future-ready students.", cta: "Read More", to: "/waitlist" },
+              { n: "02", t: "For Colleges", h: "Bring measurable readiness to campus.", b: "A structured AI-readiness program with curriculum, projects, faculty enablement, dashboards, and measurable outcomes.", cta: "Partner with HOW", to: "/colleges" },
               { n: "03", t: "For Partners & Mentors", h: "Shape India's next AI builders.", b: "Support the ecosystem through mentorship, challenges, hiring pathways, and campus partnerships.", cta: "Partner with HOW", to: "/partners" },
+
             ].map((c, i) => (
               <AnimatedSection key={c.n} delay={i * 0.08}>
                 <div className="panel p-8 h-full flex flex-col">
@@ -293,20 +211,28 @@ const Index = () => {
             </p>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-14">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7 mt-14 auto-rows-fr">
             {journey.map((j, i) => (
-              <AnimatedSection key={j.layer} delay={i * 0.04}>
-                <div className="panel p-6 h-full">
+              <AnimatedSection key={j.layer} delay={i * 0.04} className="h-full">
+                <div className="panel group relative h-full min-h-[240px] p-7 flex flex-col overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_30px_80px_-30px_hsl(325_68%_45%/0.45)]">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full gradient-brand-bg opacity-0 group-hover:opacity-10 blur-3xl transition-opacity duration-500" />
                   <div className="flex items-center justify-between">
                     <span className="font-mono-label text-primary">{j.layer}</span>
                     <span className="font-mono-label text-muted-foreground">{j.tag}</span>
                   </div>
-                  <h3 className="mt-6 text-2xl font-semibold">{j.title}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{j.body}</p>
+                  <div className="mt-6 h-px w-10 gradient-brand-bg rounded-full" />
+                  <h3 className="mt-5 text-2xl font-semibold tracking-tight">{j.title}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed flex-1">{j.body}</p>
+                  <div className="mt-6 flex items-center justify-between hairline-t pt-4">
+                    <span className="font-mono-label text-muted-foreground tabular-nums">0{i} → 0{i + 1}</span>
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary/70 group-hover:bg-primary transition-colors" />
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
           </div>
+
         </div>
       </section>
 
@@ -438,31 +364,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* WHY */}
-      <section className="relative py-24">
-        <div className="container mx-auto px-6">
-          <AnimatedSection>
-            <EyebrowLabel index="10">Why House of Wise</EyebrowLabel>
-            <h2 className="mt-6 text-display text-4xl md:text-6xl text-balance max-w-4xl">
-              Built with the seriousness the future deserves.
-            </h2>
-            <p className="mt-6 text-muted-foreground max-w-2xl">
-              Designed for students, colleges, and partners who believe education must move beyond passive learning.
-            </p>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-12">
-            {["Measurable readiness","Practical projects","Institutional implementation","Student confidence","Faculty enablement","Community-driven growth","Career-linked outcomes","Long-term ecosystem"].map((t, i) => (
-              <AnimatedSection key={t} delay={i * 0.03}>
-                <div className="hairline rounded-md p-5">
-                  <span className="font-mono-label text-primary">0{i + 1}</span>
-                  <p className="mt-3 text-foreground font-medium text-sm">{t}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FINAL CTA */}
       <section className="relative py-32">
