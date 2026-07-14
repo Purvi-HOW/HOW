@@ -80,40 +80,11 @@ const Index = () => {
       </section>
 
 
-      {/* PROOF LINE */}
-      <section className="relative pb-24">
-        <div className="container mx-auto px-6">
-          <AnimatedSection>
-            <div className="panel p-8 md:p-12">
-              <EyebrowLabel index="02">The movement</EyebrowLabel>
-              <h2 className="mt-6 text-display text-3xl md:text-5xl text-balance max-w-4xl">
-                Built for the generation graduating into an AI-first economy. Every student needs more than awareness — they need <span className="gradient-brand-text">visible proof of readiness</span>.
-              </h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mt-10">
-                {[
-                  "AI Readiness Score",
-                  "Project Portfolios",
-                  "Campus Cohorts",
-                  "Mentor Network",
-                  "Career Tracks",
-                  "Builder Community",
-                ].map((item, i) => (
-                  <div key={item} className="hairline rounded-md p-4">
-                    <p className="font-mono-label text-muted-foreground">0{i + 1}</p>
-                    <p className="text-foreground mt-2 font-medium text-sm">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
       {/* THREE WAYS IN */}
       <section className="relative py-24">
         <div className="container mx-auto px-6">
           <AnimatedSection>
-            <EyebrowLabel index="03">Three ways in</EyebrowLabel>
+            <EyebrowLabel index="02">Three ways in</EyebrowLabel>
             <h2 className="mt-6 text-display text-4xl md:text-6xl text-balance max-w-3xl">
               Enter the movement from where you are.
             </h2>
@@ -121,9 +92,10 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-6 mt-14">
             {[
-              { n: "01", t: "For Students", h: "Become AI-ready, not just AI-aware.", b: "Learn AI. Build projects. Earn your HOW Score. Join a serious community of future-ready students.", cta: "Join the waitlist", to: "/waitlist" },
-              { n: "02", t: "For Colleges", h: "Bring measurable readiness to campus.", b: "A structured AI-readiness program with curriculum, projects, faculty enablement, dashboards, and measurable outcomes.", cta: "Explore the program", to: "/colleges" },
+              { n: "01", t: "For Students", h: "Become AI-ready, not just AI-aware.", b: "Learn AI. Build projects. Earn your HOW Score. Join a serious community of future-ready students.", cta: "Read More", to: "/waitlist" },
+              { n: "02", t: "For Colleges", h: "Bring measurable readiness to campus.", b: "A structured AI-readiness program with curriculum, projects, faculty enablement, dashboards, and measurable outcomes.", cta: "Partner with HOW", to: "/colleges" },
               { n: "03", t: "For Partners & Mentors", h: "Shape India's next AI builders.", b: "Support the ecosystem through mentorship, challenges, hiring pathways, and campus partnerships.", cta: "Partner with HOW", to: "/partners" },
+
             ].map((c, i) => (
               <AnimatedSection key={c.n} delay={i * 0.08}>
                 <div className="panel p-8 h-full flex flex-col">
