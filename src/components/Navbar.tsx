@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+
 import logo from "@/assets/logo.jpeg";
 
 const Navbar = () => {
