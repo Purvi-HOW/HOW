@@ -40,17 +40,8 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-        </div>
-        <Link
-          to="/waitlist"
-          className="inline-flex items-center gap-1.5 rounded-full bg-primary pl-4 pr-2 py-2 text-xs font-semibold text-primary-foreground transition hover:bg-primary/90"
-        >
-          Join the waitlist
-          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-background/25">
-            <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.5} />
-          </span>
-        </Link>
       </div>
+
     </motion.nav>
   );
 };
