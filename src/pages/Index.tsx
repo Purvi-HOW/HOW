@@ -364,31 +364,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* WHY */}
-      <section className="relative py-24">
-        <div className="container mx-auto px-6">
-          <AnimatedSection>
-            <EyebrowLabel index="10">Why House of Wise</EyebrowLabel>
-            <h2 className="mt-6 text-display text-4xl md:text-6xl text-balance max-w-4xl">
-              Built with the seriousness the future deserves.
-            </h2>
-            <p className="mt-6 text-muted-foreground max-w-2xl">
-              Designed for students, colleges, and partners who believe education must move beyond passive learning.
-            </p>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-12">
-            {["Measurable readiness","Practical projects","Institutional implementation","Student confidence","Faculty enablement","Community-driven growth","Career-linked outcomes","Long-term ecosystem"].map((t, i) => (
-              <AnimatedSection key={t} delay={i * 0.03}>
-                <div className="hairline rounded-md p-5">
-                  <span className="font-mono-label text-primary">0{i + 1}</span>
-                  <p className="mt-3 text-foreground font-medium text-sm">{t}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FINAL CTA */}
       <section className="relative py-32">
