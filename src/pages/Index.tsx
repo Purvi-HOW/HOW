@@ -65,7 +65,6 @@ const Index = () => {
               <AnimatedSection delay={0.25}>
                 <div className="flex flex-wrap items-center gap-3 mt-10">
                   <Link to="/colleges"><WisdomButton variant="brand" size="lg">Bring HOW to your College</WisdomButton></Link>
-                  <Link to="/waitlist"><WisdomButton variant="outline" size="lg">Join Student Waitlist</WisdomButton></Link>
                   <Link to="/partners"><WisdomButton variant="ghost" size="lg" arrow={false}>Become a mentor or partner →</WisdomButton></Link>
                 </div>
               </AnimatedSection>
@@ -380,8 +379,7 @@ const Index = () => {
                   The future will not wait for students to feel ready — so we are building the place where they become ready.
                 </p>
                 <div className="flex flex-wrap justify-center gap-3 mt-10">
-                  <Link to="/waitlist"><WisdomButton variant="brand" size="lg">Join student waitlist</WisdomButton></Link>
-                  <Link to="/colleges"><WisdomButton variant="outline" size="lg">For colleges</WisdomButton></Link>
+                  <Link to="/colleges"><WisdomButton variant="brand" size="lg">Bring HOW to your College</WisdomButton></Link>
                   <Link to="/partners"><WisdomButton variant="outline" size="lg">For partners</WisdomButton></Link>
                 </div>
               </div>
