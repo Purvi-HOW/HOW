@@ -65,7 +65,6 @@ const Index = () => {
               <AnimatedSection delay={0.25}>
                 <div className="flex flex-wrap items-center gap-3 mt-10">
                   <Link to="/colleges"><WisdomButton variant="brand" size="lg">Bring HOW to your College</WisdomButton></Link>
-                  <Link to="/waitlist"><WisdomButton variant="outline" size="lg">Join Student Waitlist</WisdomButton></Link>
                   <Link to="/partners"><WisdomButton variant="ghost" size="lg" arrow={false}>Become a mentor or partner →</WisdomButton></Link>
                 </div>
               </AnimatedSection>
