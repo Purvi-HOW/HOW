@@ -11,28 +11,103 @@ import logo from "@/assets/logo.jpeg";
 const scoreBands = [
   { range: "400–550", label: "AI Explorer", note: "You are beginning your AI journey." },
   { range: "551–700", label: "AI Builder", note: "You can use AI tools and complete guided projects." },
-  { range: "701–820", label: "AI Practitioner", note: "You can apply AI to real problems and explain your work clearly." },
+  {
+    range: "701–820",
+    label: "AI Practitioner",
+    note: "You can apply AI to real problems and explain your work clearly.",
+  },
   { range: "821–920", label: "HOW Certified", note: "You have built credible proof of AI readiness." },
   { range: "921–1000", label: "HOW Visionary", note: "You are creating, leading, and helping others become AI-ready." },
 ];
 
 const journey = [
-  { layer: "Layer 0", tag: "Begin here", title: "Orientation", body: "Understand the AI shift, the changing economy, and why readiness matters." },
-  { layer: "Layer 1", tag: "Learn", title: "Foundations", body: "Learn the language, concepts, tools, and responsible use of AI." },
-  { layer: "Layer 2", tag: "Challenge", title: "Application", body: "Use AI to solve problems, improve workflows, and complete guided challenges." },
-  { layer: "Layer 3", tag: "Build", title: "Creation", body: "Build real projects across domains and turn learning into visible proof." },
-  { layer: "Layer 4", tag: "Refine", title: "Professional Readiness", body: "Develop communication, collaboration, presentation, portfolio, and workplace skills." },
-  { layer: "Layer 5", tag: "Accelerate", title: "Career Acceleration", body: "Explore tracks, mentors, internships, challenges, and opportunity pathways." },
-  { layer: "Layer 6", tag: "Belong", title: "Lifelong Community", body: "Stay connected through guilds, challenges, events, updates, and future pathways." },
+  {
+    layer: "Layer 0",
+    tag: "Begin here",
+    title: "Orientation",
+    body: "Understand the AI shift, the changing economy, and why readiness matters.",
+  },
+  {
+    layer: "Layer 1",
+    tag: "Learn",
+    title: "Foundations",
+    body: "Learn the language, concepts, tools, and responsible use of AI.",
+  },
+  {
+    layer: "Layer 2",
+    tag: "Challenge",
+    title: "Application",
+    body: "Use AI to solve problems, improve workflows, and complete guided challenges.",
+  },
+  {
+    layer: "Layer 3",
+    tag: "Build",
+    title: "Creation",
+    body: "Build real projects across domains and turn learning into visible proof.",
+  },
+  {
+    layer: "Layer 4",
+    tag: "Refine",
+    title: "Professional Readiness",
+    body: "Develop communication, collaboration, presentation, portfolio, and workplace skills.",
+  },
+  {
+    layer: "Layer 5",
+    tag: "Accelerate",
+    title: "Career Acceleration",
+    body: "Explore tracks, mentors, internships, challenges, and opportunity pathways.",
+  },
+  {
+    layer: "Layer 6",
+    tag: "Belong",
+    title: "Lifelong Community",
+    body: "Stay connected through guilds, challenges, events, updates, and future pathways.",
+  },
 ];
 
 const projects = [
-  { tag: "Business + Tech", score: "+60", title: "AI Resume Screener", body: "Reviews resumes and suggests improvements.", stack: ["ChatGPT", "Sheets", "Python"] },
-  { tag: "Technology", score: "+70", title: "Campus Helpdesk Bot", body: "Answers student and college queries instantly.", stack: ["LLM", "Docs", "No-code"] },
-  { tag: "Career", score: "+65", title: "Placement Interview Coach", body: "Practice interviews, communication, and confidence.", stack: ["ChatGPT", "Voice", "Prompts"] },
-  { tag: "Marketing", score: "+55", title: "Local Business Marketing Assistant", body: "AI workflows for content, campaigns, and engagement.", stack: ["Gemini", "Canva", "Automation"] },
-  { tag: "Research", score: "+60", title: "Research Summarizer", body: "Turns long research material into clear summaries.", stack: ["Claude", "PDF", "RAG"] },
-  { tag: "Social Impact", score: "+70", title: "Social Impact Dashboard", body: "Understand local problems with AI and data.", stack: ["Data", "Maps", "Charts"] },
+  {
+    tag: "Business + Tech",
+    score: "+60",
+    title: "AI Resume Screener",
+    body: "Reviews resumes and suggests improvements.",
+    stack: ["ChatGPT", "Sheets", "Python"],
+  },
+  {
+    tag: "Technology",
+    score: "+70",
+    title: "Campus Helpdesk Bot",
+    body: "Answers student and college queries instantly.",
+    stack: ["LLM", "Docs", "No-code"],
+  },
+  {
+    tag: "Career",
+    score: "+65",
+    title: "Placement Interview Coach",
+    body: "Practice interviews, communication, and confidence.",
+    stack: ["ChatGPT", "Voice", "Prompts"],
+  },
+  {
+    tag: "Marketing",
+    score: "+55",
+    title: "Local Business Marketing Assistant",
+    body: "AI workflows for content, campaigns, and engagement.",
+    stack: ["Gemini", "Canva", "Automation"],
+  },
+  {
+    tag: "Research",
+    score: "+60",
+    title: "Research Summarizer",
+    body: "Turns long research material into clear summaries.",
+    stack: ["Claude", "PDF", "RAG"],
+  },
+  {
+    tag: "Social Impact",
+    score: "+70",
+    title: "Social Impact Dashboard",
+    body: "Understand local problems with AI and data.",
+    stack: ["Data", "Maps", "Charts"],
+  },
 ];
 
 const Index = () => {
@@ -54,18 +129,27 @@ const Index = () => {
             <div className="max-w-5xl">
               <AnimatedSection delay={0.05}>
                 <h1 className="text-display text-5xl md:text-7xl lg:text-[5.5rem] font-semibold text-balance">
-                  India's <span className="gradient-brand-text">AI-ready student</span> movement starts here.
+                  India's <span className="gradient-brand-text">AI-ready student</span> movement starts here!
                 </h1>
               </AnimatedSection>
               <AnimatedSection delay={0.15}>
                 <p className="mt-8 max-w-2xl text-lg md:text-xl text-muted-foreground text-pretty leading-relaxed">
-                  A new kind of learning ecosystem for students who want to think better, build faster, and become opportunity-ready in an AI-first world.
+                  A new kind of learning ecosystem for students who want to think better, build faster, and become
+                  opportunity-ready in an AI-first world.
                 </p>
               </AnimatedSection>
               <AnimatedSection delay={0.25}>
                 <div className="flex flex-wrap items-center gap-3 mt-10">
-                  <Link to="/colleges"><WisdomButton variant="brand" size="lg">Bring HOW to your College</WisdomButton></Link>
-                  <Link to="/partners"><WisdomButton variant="ghost" size="lg" arrow={false}>Become a mentor or partner →</WisdomButton></Link>
+                  <Link to="/colleges">
+                    <WisdomButton variant="brand" size="lg">
+                      Bring HOW to your College
+                    </WisdomButton>
+                  </Link>
+                  <Link to="/partners">
+                    <WisdomButton variant="ghost" size="lg" arrow={false}>
+                      Become a mentor or partner →
+                    </WisdomButton>
+                  </Link>
                 </div>
               </AnimatedSection>
               <AnimatedSection delay={0.35}>
@@ -77,7 +161,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
 
       {/* THREE WAYS IN */}
       <section className="relative py-24">
@@ -91,10 +174,30 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-6 mt-14">
             {[
-              { n: "01", t: "For Students", h: "Become AI-ready, not just AI-aware.", b: "Learn AI. Build projects. Earn your HOW Score. Join a serious community of future-ready students.", cta: "Read More", to: "/waitlist" },
-              { n: "02", t: "For Colleges", h: "Bring measurable readiness to campus.", b: "A structured AI-readiness program with curriculum, projects, faculty enablement, dashboards, and measurable outcomes.", cta: "Partner with HOW", to: "/colleges" },
-              { n: "03", t: "For Partners & Mentors", h: "Shape India's next AI builders.", b: "Support the ecosystem through mentorship, challenges, hiring pathways, and campus partnerships.", cta: "Partner with HOW", to: "/partners" },
-
+              {
+                n: "01",
+                t: "For Students",
+                h: "Become AI-ready, not just AI-aware.",
+                b: "Learn AI. Build projects. Earn your HOW Score. Join a serious community of future-ready students.",
+                cta: "Read More",
+                to: "/waitlist",
+              },
+              {
+                n: "02",
+                t: "For Colleges",
+                h: "Bring measurable readiness to campus.",
+                b: "A structured AI-readiness program with curriculum, projects, faculty enablement, dashboards, and measurable outcomes.",
+                cta: "Partner with HOW",
+                to: "/colleges",
+              },
+              {
+                n: "03",
+                t: "For Partners & Mentors",
+                h: "Shape India's next AI builders.",
+                b: "Support the ecosystem through mentorship, challenges, hiring pathways, and campus partnerships.",
+                cta: "Partner with HOW",
+                to: "/partners",
+              },
             ].map((c, i) => (
               <AnimatedSection key={c.n} delay={i * 0.08}>
                 <div className="panel p-8 h-full flex flex-col">
@@ -104,7 +207,9 @@ const Index = () => {
                   </div>
                   <h3 className="text-2xl md:text-3xl font-semibold mt-6 text-balance">{c.h}</h3>
                   <p className="text-muted-foreground mt-4 text-pretty leading-relaxed flex-1">{c.b}</p>
-                  <Link to={c.to} className="mt-8"><WisdomButton variant="outline">{c.cta}</WisdomButton></Link>
+                  <Link to={c.to} className="mt-8">
+                    <WisdomButton variant="outline">{c.cta}</WisdomButton>
+                  </Link>
                 </div>
               </AnimatedSection>
             ))}
@@ -127,8 +232,16 @@ const Index = () => {
               <div className="panel p-8 h-full">
                 <p className="font-mono-label text-muted-foreground">The old way</p>
                 <ul className="mt-6 space-y-3">
-                  {["Watch a session.", "Receive a certificate.", "Add a line to the resume.", "Wait for an opportunity."].map((x) => (
-                    <li key={x} className="flex gap-3 text-foreground/70"><span className="text-muted-foreground">—</span>{x}</li>
+                  {[
+                    "Watch a session.",
+                    "Receive a certificate.",
+                    "Add a line to the resume.",
+                    "Wait for an opportunity.",
+                  ].map((x) => (
+                    <li key={x} className="flex gap-3 text-foreground/70">
+                      <span className="text-muted-foreground">—</span>
+                      {x}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -137,8 +250,18 @@ const Index = () => {
               <div className="panel p-8 h-full border-primary/40">
                 <p className="font-mono-label text-primary">The new way</p>
                 <ul className="mt-6 space-y-3">
-                  {["Learn the tools.", "Build real projects.", "Show public proof.", "Measure readiness.", "Enter a serious community.", "Create opportunities."].map((x) => (
-                    <li key={x} className="flex gap-3 text-foreground"><Check className="h-4 w-4 text-primary mt-1 shrink-0" strokeWidth={2.5} />{x}</li>
+                  {[
+                    "Learn the tools.",
+                    "Build real projects.",
+                    "Show public proof.",
+                    "Measure readiness.",
+                    "Enter a serious community.",
+                    "Create opportunities.",
+                  ].map((x) => (
+                    <li key={x} className="flex gap-3 text-foreground">
+                      <Check className="h-4 w-4 text-primary mt-1 shrink-0" strokeWidth={2.5} />
+                      {x}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -146,7 +269,8 @@ const Index = () => {
           </div>
           <AnimatedSection delay={0.2}>
             <p className="mt-10 text-lg text-muted-foreground max-w-3xl">
-              The future will not reward students who only know about AI. It will reward students who know how to use it.
+              The future will not reward students who only know about AI. It will reward students who know how to use
+              it.
             </p>
           </AnimatedSection>
         </div>
@@ -162,13 +286,17 @@ const Index = () => {
                 Your AI readiness should be <span className="gradient-brand-text">visible</span>.
               </h2>
               <p className="mt-6 text-muted-foreground leading-relaxed">
-                Marks show academic performance. The HOW Score shows AI readiness. It helps students understand where they stand, what they have built, and what to improve next.
+                Marks show academic performance. The HOW Score shows AI readiness. It helps students understand where
+                they stand, what they have built, and what to improve next.
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                Every activity, challenge, project, presentation, collaboration, and assessment contributes to a student's readiness profile.
+                Every activity, challenge, project, presentation, collaboration, and assessment contributes to a
+                student's readiness profile.
               </p>
               <div className="mt-8">
-                <Link to="/waitlist"><WisdomButton variant="brand">Check your readiness level</WisdomButton></Link>
+                <Link to="/waitlist">
+                  <WisdomButton variant="brand">Check your readiness level</WisdomButton>
+                </Link>
               </div>
             </AnimatedSection>
 
@@ -177,7 +305,9 @@ const Index = () => {
                 <div className="flex items-end justify-between hairline-b pb-5">
                   <div>
                     <p className="font-mono-label text-muted-foreground">Where are you today?</p>
-                    <p className="mt-3 text-6xl font-semibold gradient-brand-text tabular-nums">720<span className="text-2xl text-muted-foreground">/1000</span></p>
+                    <p className="mt-3 text-6xl font-semibold gradient-brand-text tabular-nums">
+                      720<span className="text-2xl text-muted-foreground">/1000</span>
+                    </p>
                     <p className="mt-2 text-foreground/80">AI Practitioner</p>
                   </div>
                   <span className="chip text-cyan-signal">Live</span>
@@ -206,7 +336,8 @@ const Index = () => {
               A structured journey from curiosity to capability.
             </h2>
             <p className="mt-6 text-muted-foreground max-w-2xl">
-              Each layer moves students from awareness to confidence, from confidence to creation, and from creation to opportunity.
+              Each layer moves students from awareness to confidence, from confidence to creation, and from creation to
+              opportunity.
             </p>
           </AnimatedSection>
 
@@ -224,14 +355,15 @@ const Index = () => {
                   <h3 className="mt-5 text-2xl font-semibold tracking-tight">{j.title}</h3>
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed flex-1">{j.body}</p>
                   <div className="mt-6 flex items-center justify-between hairline-t pt-4">
-                    <span className="font-mono-label text-muted-foreground tabular-nums">0{i} → 0{i + 1}</span>
+                    <span className="font-mono-label text-muted-foreground tabular-nums">
+                      0{i} → 0{i + 1}
+                    </span>
                     <span className="h-1.5 w-1.5 rounded-full bg-primary/70 group-hover:bg-primary transition-colors" />
                   </div>
                 </div>
               </AnimatedSection>
             ))}
           </div>
-
         </div>
       </section>
 
@@ -260,7 +392,12 @@ const Index = () => {
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.body}</p>
                   <div className="flex gap-1.5 mt-5 flex-wrap">
                     {p.stack.map((s) => (
-                      <span key={s} className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded bg-muted text-muted-foreground">{s}</span>
+                      <span
+                        key={s}
+                        className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded bg-muted text-muted-foreground"
+                      >
+                        {s}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -280,16 +417,32 @@ const Index = () => {
                 Learn with people who are serious about their future.
               </h2>
               <p className="mt-6 text-muted-foreground leading-relaxed">
-                Not just a program — a community for ambitious students who want to become more capable, more visible, and more prepared. Inside the HOW Guild:
+                Not just a program — a community for ambitious students who want to become more capable, more visible,
+                and more prepared. Inside the HOW Guild:
               </p>
               <div className="flex flex-wrap gap-2 mt-6">
-                {["Weekly AI challenges","Build sprints","Mentor sessions","Demo days","Campus circles","Peer learning","Career track discussions","Project showcases","Leaderboards","Community recognition"].map((t) => (
-                  <span key={t} className="chip">{t}</span>
+                {[
+                  "Weekly AI challenges",
+                  "Build sprints",
+                  "Mentor sessions",
+                  "Demo days",
+                  "Campus circles",
+                  "Peer learning",
+                  "Career track discussions",
+                  "Project showcases",
+                  "Leaderboards",
+                  "Community recognition",
+                ].map((t) => (
+                  <span key={t} className="chip">
+                    {t}
+                  </span>
                 ))}
               </div>
               <p className="mt-8 text-foreground/80 italic">"The right community changes how fast you grow."</p>
               <div className="mt-6">
-                <Link to="/waitlist"><WisdomButton variant="brand">Apply to join the Guild</WisdomButton></Link>
+                <Link to="/waitlist">
+                  <WisdomButton variant="brand">Apply to join the Guild</WisdomButton>
+                </Link>
               </div>
             </AnimatedSection>
 
@@ -305,20 +458,31 @@ const Index = () => {
               <div className="panel p-6">
                 <span className="font-mono-label text-muted-foreground">Mentor spotlight</span>
                 <div className="flex items-center gap-4 mt-4">
-                  <div className="h-12 w-12 rounded-full gradient-brand-bg text-background flex items-center justify-center font-semibold">RV</div>
+                  <div className="h-12 w-12 rounded-full gradient-brand-bg text-background flex items-center justify-center font-semibold">
+                    RV
+                  </div>
                   <div>
                     <p className="font-medium">Rahul V.</p>
                     <p className="text-xs text-muted-foreground mt-1">AI Product Lead · hosting Thu 7PM</p>
                   </div>
                 </div>
-                <p className="mt-4 text-foreground/80 italic text-sm">"Build in public. Your projects are your proof."</p>
+                <p className="mt-4 text-foreground/80 italic text-sm">
+                  "Build in public. Your projects are your proof."
+                </p>
               </div>
               <div className="panel p-6">
                 <span className="font-mono-label text-muted-foreground">Campus leaderboard</span>
                 <div className="mt-4 space-y-2">
-                  {[{r:1,n:"Ananya R.",s:720},{r:2,n:"Kabir M.",s:705},{r:3,n:"Sneha T.",s:690}].map((row) => (
+                  {[
+                    { r: 1, n: "Ananya R.", s: 720 },
+                    { r: 2, n: "Kabir M.", s: 705 },
+                    { r: 3, n: "Sneha T.", s: 690 },
+                  ].map((row) => (
                     <div key={row.r} className="flex items-center justify-between hairline-b pb-2 last:border-0">
-                      <span className="text-sm"><span className="font-mono text-primary mr-3">0{row.r}</span>{row.n}</span>
+                      <span className="text-sm">
+                        <span className="font-mono text-primary mr-3">0{row.r}</span>
+                        {row.n}
+                      </span>
                       <span className="font-mono text-sm text-foreground/80 tabular-nums">{row.s}</span>
                     </div>
                   ))}
@@ -343,8 +507,19 @@ const Index = () => {
               <div className="panel p-8 h-full">
                 <p className="font-mono-label text-muted-foreground">Before House of Wise</p>
                 <ul className="mt-6 space-y-3 text-foreground/70">
-                  {["I know AI is important.","I have watched videos.","I have attended workshops.","I have certificates.","I do not know what to build.","I do not know how to show my skills.","I am not sure where I stand."].map((x) => (
-                    <li key={x} className="flex gap-3"><span className="text-muted-foreground">—</span>{x}</li>
+                  {[
+                    "I know AI is important.",
+                    "I have watched videos.",
+                    "I have attended workshops.",
+                    "I have certificates.",
+                    "I do not know what to build.",
+                    "I do not know how to show my skills.",
+                    "I am not sure where I stand.",
+                  ].map((x) => (
+                    <li key={x} className="flex gap-3">
+                      <span className="text-muted-foreground">—</span>
+                      {x}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -353,8 +528,19 @@ const Index = () => {
               <div className="panel p-8 h-full border-primary/40">
                 <p className="font-mono-label text-primary">After House of Wise</p>
                 <ul className="mt-6 space-y-3 text-foreground">
-                  {["I understand how AI works.","I have built real projects.","I have a visible portfolio.","I have a HOW Score.","I know my career track.","I can explain my work.","I belong to a serious builder community."].map((x) => (
-                    <li key={x} className="flex gap-3"><Check className="h-4 w-4 text-primary mt-1 shrink-0" strokeWidth={2.5} />{x}</li>
+                  {[
+                    "I understand how AI works.",
+                    "I have built real projects.",
+                    "I have a visible portfolio.",
+                    "I have a HOW Score.",
+                    "I know my career track.",
+                    "I can explain my work.",
+                    "I belong to a serious builder community.",
+                  ].map((x) => (
+                    <li key={x} className="flex gap-3">
+                      <Check className="h-4 w-4 text-primary mt-1 shrink-0" strokeWidth={2.5} />
+                      {x}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -363,7 +549,6 @@ const Index = () => {
         </div>
       </section>
 
-
       {/* FINAL CTA */}
       <section className="relative py-32">
         <div className="container mx-auto px-6">
@@ -371,16 +556,27 @@ const Index = () => {
             <div className="panel p-10 md:p-16 text-center relative overflow-hidden">
               <div className="absolute inset-0 opacity-10 gradient-brand-bg pointer-events-none" />
               <div className="relative">
-                <EyebrowLabel index="11" className="justify-center">Take your next step</EyebrowLabel>
+                <EyebrowLabel index="11" className="justify-center">
+                  Take your next step
+                </EyebrowLabel>
                 <h2 className="mt-6 text-display text-4xl md:text-6xl text-balance max-w-4xl mx-auto">
                   The <span className="gradient-brand-text">AI-ready generation</span> is being built now.
                 </h2>
                 <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
-                  The future will not wait for students to feel ready — so we are building the place where they become ready.
+                  The future will not wait for students to feel ready — so we are building the place where they become
+                  ready.
                 </p>
                 <div className="flex flex-wrap justify-center gap-3 mt-10">
-                  <Link to="/colleges"><WisdomButton variant="brand" size="lg">Bring HOW to your College</WisdomButton></Link>
-                  <Link to="/partners"><WisdomButton variant="outline" size="lg">For partners</WisdomButton></Link>
+                  <Link to="/colleges">
+                    <WisdomButton variant="brand" size="lg">
+                      Bring HOW to your College
+                    </WisdomButton>
+                  </Link>
+                  <Link to="/partners">
+                    <WisdomButton variant="outline" size="lg">
+                      For partners
+                    </WisdomButton>
+                  </Link>
                 </div>
               </div>
             </div>
