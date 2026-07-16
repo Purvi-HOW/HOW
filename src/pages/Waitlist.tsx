@@ -67,7 +67,7 @@ const Waitlist = () => {
 
         toast.success("Partner application submitted successfully!");
       } else {
-        toast.success("Student waitlist coming soon!");
+        toast.success("Partner application submitted successfully!");
       }
 
       setForm({
