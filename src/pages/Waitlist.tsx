@@ -30,6 +30,14 @@ const Waitlist = () => {
   const [loading, setLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
+  const isFormComplete =
+    form.name.trim() !== "" &&
+    form.email.trim() !== "" &&
+    form.org.trim() !== "" &&
+    form.role.trim() !== "" &&
+    form.interest.trim() !== "" &&
+    form.whatsapp.trim() !== "";
+
   const validate = () => {
     const newErrors: Record<string, string> = {};
 
@@ -52,7 +60,7 @@ const Waitlist = () => {
     // Phone
     if (!form.whatsapp.trim()) {
       newErrors.whatsapp = "Phone number is required.";
-    } else if (!/^[0-9]{10}$/.test(form.whatsapp)) {
+    } else if (!/^(\+91)?[6-9]\d{9}$/.test(form.whatsapp)) {
       newErrors.whatsapp = "Please enter a valid 10-digit phone number.";
     }
 
@@ -293,6 +301,7 @@ const Waitlist = () => {
                 <div className="flex gap-2 mb-8">
                   {(["college", "partner"] as Audience[]).map((a) => (
                     <button
+                      type="button"
                       key={a}
                       onClick={() => setAudience(a)}
                       className={`rounded-full px-4 py-2 ${
@@ -421,7 +430,7 @@ const Waitlist = () => {
                     type="submit"
                     variant="brand"
                     size="lg"
-                    disabled={loading || Object.keys(errors).length > 0}
+                    disabled={loading || !isFormComplete}
                     className={`w-full justify-center transition-all duration-300 ${
                       loading || Object.keys(errors).length > 0 ? "opacity-60 cursor-not-allowed" : ""
                     }`}
