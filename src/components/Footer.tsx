@@ -72,7 +72,12 @@ const Footer = () => {
 
                 <span>·</span>
 
-                <a href="#" className="hover:text-primary transition-colors">
+                <a
+                  href="https://www.instagram.com/houseofwisehq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
                   Instagram
                 </a>
               </div>
