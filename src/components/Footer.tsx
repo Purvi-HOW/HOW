@@ -52,7 +52,9 @@ const Footer = () => {
 
             <div className="flex flex-col gap-2.5">
               <a
-                href="mailto:hello@howschool.online?subject=Institutional%20Partnership%20Inquiry&body=Dear%20House%20of%20Wise%20Team,%0A%0AWe%20would%20like%20to%20learn%20more%20about%20the%20House%20of%20Wise%20AI%20Readiness%20Program%20for%20our%20institution.%0A%0AInstitution%20Name:%0AContact%20Person:%0ADesignation:%0AContact%20Number:%0A%0ARegards,"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@howschool.online&su=Institutional%20Partnership%20Inquiry&body=Dear%20House%20of%20Wise%20Team,%0A%0AWe%20would%20like%20to%20learn%20more%20about%20the%20House%20of%20Wise%20AI%20Readiness%20Program%20for%20our%20institution.%0A%0AInstitution%20Name:%0AContact%20Person:%0ADesignation:%0AContact%20Number:%0A%0ARegards,"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-foreground/80 hover:text-primary transition-colors"
               >
                 hello@howschool.online
