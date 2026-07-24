@@ -73,9 +73,13 @@ const Footer = () => {
                 <span>·</span>
 
                 <a
-                  href="https://www.instagram.com/houseofwisehq"
+                  href="https://www.instagram.com/houseofwisehq/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open("https://www.instagram.com/houseofwisehq/", "_blank", "noopener,noreferrer");
+                  }}
                   className="hover:text-primary transition-colors"
                 >
                   Instagram
