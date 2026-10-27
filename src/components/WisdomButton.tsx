@@ -10,6 +10,7 @@ interface WisdomButtonProps {
   className?: string;
   arrow?: boolean;
   type?: "button" | "submit";
+  disabled?: boolean;
 }
 
 const variants = {
@@ -32,10 +33,12 @@ const WisdomButton = ({
   className = "",
   arrow = true,
   type = "button",
+  disabled = false,
 }: WisdomButtonProps) => {
   return (
     <motion.button
       type={type}
+      disabled={disabled}
       whileHover={{ y: -1 }}
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.2, ease: [0.2, 0.7, 0.1, 1] }}
