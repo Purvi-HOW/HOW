@@ -319,7 +319,6 @@ const Colleges = () => (
                 {t.featured && <span className="chip text-primary mb-4 w-fit">Recommended</span>}
                 <h3 className="text-2xl font-semibold">{t.name}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{t.desc}</p>
-                <p className="mt-6 text-3xl font-semibold gradient-brand-text">{t.price}</p>
                 <ul className="mt-6 space-y-2 flex-1">
                   {t.items.map((x) => (
                     <li key={x} className="flex gap-2 text-sm text-foreground/80">
