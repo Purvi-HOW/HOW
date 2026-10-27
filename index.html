@@ -1,60 +1,1279 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>House of Wise — India's AI-ready student movement</title>
+<meta name="description" content="Students building with AI, every week, on campuses across India. Start a House of Wise chapter at your college. No passive learning, no empty certificates.">
+<meta property="og:title" content="Start the AI movement on your campus">
+<meta property="og:description" content="No passive learning. No empty certificates. Only capability, proof, and community.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050408">
+<link rel="icon" type="image/png" href="/brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+<style>
+/* Layout concept: a dark "night-campus" page; real photos carry the proof, the logo's peach-magenta-violet gradient is spent only on the moments that matter (the promise, the main button, the chapter section). */
+body{margin:0;background:#050408;color:#F5EFF7;font-family:"Geist",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#F2A870}a:hover{color:#F8CBA3}
+h1,h2,h3{text-wrap:balance}
+.ph{font-family:"Geist Mono",ui-monospace,monospace;font-size:.86em;background:rgba(229,107,182,.16);color:#F7CDB0;padding:1px 6px;border-radius:5px;white-space:nowrap}
+.btn-main{transition:transform .2s ease, box-shadow .2s ease}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 14px 40px -12px rgba(229,107,182,.75)}
+.btn-ghost{transition:background .2s ease,border-color .2s ease}
+.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.35)}
+.lift{transition:transform .35s ease}
+.lift:hover{transform:translateY(-4px)}
+.zoom img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.zoom:hover img{transform:scale(1.04)}
+.marq{animation:how-marq 38s linear infinite}
+@keyframes how-marq{to{transform:translateX(-50%)}}
+.pulse{animation:how-pulse 2s ease-in-out infinite}
+@keyframes how-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+input,textarea{font:inherit}
+input:focus,textarea:focus{outline:2px solid #E56BB6;outline-offset:1px}
+a:focus-visible,button:focus-visible{outline:2px solid #F2A870;outline-offset:3px}
+.scene{perspective:1100px}
+.tilt{transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.cube{position:relative;width:var(--s);height:var(--s);transform-style:preserve-3d;transform:rotateX(-35.264deg) rotateY(45deg);animation:how-turn 16s infinite}
+.cube-b{animation-delay:-8s}
+.lface{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform-style:preserve-3d}
+.lface img{position:absolute;left:-12%;top:-12%;width:124%;height:124%;max-width:none;display:block;pointer-events:none;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.lface .glass{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.glass{position:absolute;inset:0;background:linear-gradient(145deg,rgba(242,168,112,.05),rgba(156,107,229,.06));box-shadow:inset 0 0 0 1px rgba(242,168,112,.07),inset 0 0 40px rgba(229,107,182,.08)}
+@keyframes how-turn{0%{transform:rotateX(-35.264deg) rotateY(45deg);animation-timing-function:cubic-bezier(.45,0,.55,1)}30%{transform:rotateX(-27deg) rotateY(60deg);animation-timing-function:cubic-bezier(.45,0,.55,1)}55%{transform:rotateX(-35.264deg) rotateY(45deg);animation-timing-function:cubic-bezier(.7,0,.25,1)}82%,100%{transform:rotateX(-35.264deg) rotateY(405deg)}}
+.ring{position:absolute;border-radius:50%;border:1px solid rgba(242,168,112,.28);transform-style:preserve-3d;animation:how-ring 24s linear infinite}
+@keyframes how-ring{from{transform:rotateX(74deg) rotateZ(0deg)}to{transform:rotateX(74deg) rotateZ(360deg)}}
+.orb{position:absolute;width:12px;height:12px;border-radius:50%;background:#F2A870;box-shadow:0 0 18px #E56BB6;top:-6px;left:calc(50% - 6px)}
+.orbit{transform:translate3d(0,0,var(--z,60px));animation:how-float 7s ease-in-out infinite}
+@keyframes how-float{0%,100%{transform:translate3d(0,0,var(--z,60px))}50%{transform:translate3d(0,-16px,var(--z,60px))}}
+.floor{animation:how-floor 2.6s linear infinite}
+@keyframes how-floor{to{background-position:0 64px,0 0}}
+.rise{transform:perspective(1800px) rotateX(9deg) scale(.965);transform-origin:50% 0;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.rise:hover{transform:perspective(1800px) rotateX(0deg) scale(1)}
+.tiltcard{transform:perspective(1300px) rotateY(-16deg) rotateX(7deg);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.tiltcard:hover{transform:perspective(1300px) rotateY(0deg) rotateX(0deg)}
+.bob{animation:how-bob 3.6s ease-in-out infinite}
+@keyframes how-bob{50%{transform:translateY(-9px)}}
+@media (prefers-reduced-motion: reduce){.marq,.pulse,.cube,.ring,.orbit,.floor,.bob{animation:none}.btn-main,.lift,.zoom img,.tilt,.rise,.tiltcard{transition:none}}
 
-    <title>House of Wise (HOW) — India's AI-ready student movement</title>
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+.tex{position:absolute;left:-12%;top:-12%;width:124%;height:124%;background-size:100% 100%;background-repeat:no-repeat;pointer-events:none;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.tex-R{background-image:url(/brand/cube-face-right.webp)}
+.tex-L{background-image:url(/brand/cube-face-left.webp)}
+.tex-T{background-image:url(/brand/cube-face-top.webp)}
+.faq{border-bottom:1px solid rgba(255,255,255,0.1)}
+.faq summary{list-style:none;cursor:pointer;min-height:64px;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 0;font-family:"Geist",system-ui,sans-serif;font-weight:500;font-size:clamp(16px,1.6vw,19px);color:#F5EFF7}
+.faq summary::-webkit-details-marker{display:none}
+.faq-sign{flex:none;font-family:"Geist Mono",ui-monospace,monospace;font-size:20px;color:#E56BB6;transition:transform .25s ease}
+.faq[open] .faq-sign{transform:rotate(45deg)}
+.faq p{margin:0;padding:0 40px 22px 0;font-size:16px;line-height:1.65;color:#B9ADC6;max-width:680px}
+</style>
 
-    <meta
-      name="description"
-      content="An institution for builders. House of Wise (formerly House of Wisdom) helps students, colleges, and partners build measurable AI readiness — through curriculum, projects, mentors, and the HOW Score."
-    />
+<style>
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.form-status{margin:0;min-height:0;font-size:14px;line-height:1.5;color:#A3264F}
+.form-status:empty{display:none}
+.how-dialog{border:0;padding:0;background:transparent;max-width:min(600px,calc(100vw - 32px));width:100%;max-height:calc(100dvh - 32px);color:#1A1222}
+.how-dialog::backdrop{background:rgba(5,4,8,.72);backdrop-filter:blur(6px)}
+.dlg-card{position:relative;background:#F5EFF7;border-radius:24px;padding:clamp(22px,4vw,34px);box-shadow:0 40px 100px -30px rgba(156,107,229,.6)}
+.dlg-x{position:absolute;top:12px;right:12px;width:44px;height:44px;border:0;border-radius:50%;background:transparent;font-size:28px;line-height:1;color:#5E5168;cursor:pointer}
+.dlg-x:hover{background:#E9E0EE}
+.how-form{display:flex;flex-direction:column;gap:16px}
+.dlg-title{margin:0;padding-right:40px;font-family:"Geist",system-ui,sans-serif;font-weight:600;font-size:24px;letter-spacing:-.02em;color:#1A1222}
+.dlg-intro{margin:0;font-size:15px;line-height:1.55;color:#5E5168}
+.fld-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:14px}
+.fld{display:flex;flex-direction:column;gap:6px;min-width:0}
+.fld.full{grid-column:1/-1}
+.fld label{font-size:14px;font-weight:600;color:#1A1222}
+.fld .opt{font-weight:400;color:#5E5168}
+.fld .help{font-size:13px;color:#5E5168}
+.fld input,.fld select,.fld textarea{min-height:46px;padding:0 14px;border-radius:12px;border:1px solid #D8CEE0;background:#FFFFFF;color:#1A1222;font:inherit;font-size:16px;width:100%;box-sizing:border-box}
+.fld textarea{padding:12px 14px;resize:vertical}
+.fld.chk label{display:flex;gap:10px;align-items:center;font-weight:500}
+.fld.chk input{width:20px;min-height:20px;height:20px}
+.dlg-submit,.ok-close{min-height:52px;border:0;border-radius:999px;background:linear-gradient(100deg,#F2A870,#E56BB6 50%,#9C6BE5);color:#150A1A;font:inherit;font-weight:600;font-size:16px;cursor:pointer;padding:0 24px}
+.dlg-submit[disabled]{opacity:.6;cursor:progress}
+.dlg-ok{display:flex;flex-direction:column;gap:14px}
+.ok-dot{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F2A870,#E56BB6 55%,#9C6BE5);display:flex;align-items:center;justify-content:center}
+.ok-actions{display:flex;flex-wrap:wrap;gap:10px;padding-top:6px}
+.ok-wa{display:inline-flex;align-items:center;min-height:52px;padding:0 22px;border-radius:999px;background:#1A1222;color:#F5EFF7!important;font-weight:600;text-decoration:none}
+.ev-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 32px;padding-block:22px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.ev-date{flex:0 0 140px;font-family:"Geist Mono",ui-monospace,monospace;font-size:14px;color:#F2A870;letter-spacing:.04em}
+.ev-title{flex:1 1 260px;min-width:0;font-family:"Geist",system-ui,sans-serif;font-size:20px;font-weight:500;color:#F5EFF7}
+.ev-meta{flex:1 1 200px;min-width:0;font-size:15px;color:#B9ADC6}
+.ev-btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;border:1px solid rgba(255,255,255,0.22);background:transparent;color:#F5EFF7;font:inherit;font-weight:500;cursor:pointer}
+.ev-btn:hover{background:rgba(255,255,255,.08)}
+.ev-btn[disabled]{opacity:.5;cursor:not-allowed}
+[aria-disabled="true"]{cursor:default;opacity:.7}
+</style>
+<script>
+/* ==================================================================
+   HOUSE OF WISE — SITE SETTINGS. Edit only the values in quotes.
+   supabaseKey: your Supabase anon / publishable key (safe to publish).
+   Never put the service_role or secret key here.
+   ================================================================== */
+window.HOW_CONFIG = {
+  supabaseUrl:  'https://xtsgzdccvdqaqchfgrdk.supabase.co',
+  supabaseKey:  'sb_publishable_K27X_Sr8xChGV-B6ODrfiw_wiJaQW2h',
+  whatsappUrl:  'https://chat.whatsapp.com/KE1AsxQEgYpFjNSnWh6ODv',
+  instagramUrl: '',
+  linkedinUrl:  '',
+  xUrl:         '',
+  brochureUrl:  '',   // public PDF link from Supabase Storage (optional)
+  chatFunction: 'how-chat'  // Supabase Edge Function for the AI chat. Set to '' to make the button open WhatsApp instead.
+};
+</script>
 
-    <meta name="author" content="House of Wise" />
+<style>
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.chat-panel{position:fixed;right:20px;bottom:88px;z-index:40;width:min(390px,calc(100vw - 32px));height:min(580px,calc(100dvh - 120px));display:flex;flex-direction:column;background:#0F0A19;color:#F5EFF7;border:1px solid rgba(255,255,255,.12);border-radius:22px;box-shadow:0 40px 90px -30px rgba(156,107,229,.65);overflow:hidden;font-family:"Geist",system-ui,sans-serif}
+.chat-panel[hidden]{display:none!important}
+.chat-head{display:flex;align-items:center;gap:12px;padding:14px 14px 14px 18px;border-bottom:1px solid rgba(255,255,255,.08);background:linear-gradient(100deg,rgba(242,168,112,.12),rgba(229,107,182,.10),rgba(156,107,229,.12))}
+.chat-mark{width:34px;height:39px;flex:none;background-size:contain;background-repeat:no-repeat;background-position:center}
+.chat-head-text{flex:1;min-width:0;display:flex;flex-direction:column}
+.chat-head-text h2{margin:0;font-size:16px;font-weight:600;color:#F5EFF7}
+.chat-head-text span{font-size:12px;color:#B9ADC6}
+.chat-x{width:44px;height:44px;border:0;border-radius:50%;background:transparent;color:#CFC4DA;font-size:26px;cursor:pointer}
+.chat-x:hover{background:rgba(255,255,255,.08)}
+.chat-log{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;overscroll-behavior:contain}
+.msg{max-width:85%;padding:10px 13px;border-radius:16px;font-size:15px;line-height:1.5;white-space:pre-wrap;word-wrap:break-word}
+.msg.bot{align-self:flex-start;background:#1C1428;border-bottom-left-radius:5px}
+.msg.me{align-self:flex-end;background:linear-gradient(100deg,#F2A870,#E56BB6 55%,#9C6BE5);color:#150A1A;border-bottom-right-radius:5px}
+.msg.err{align-self:flex-start;background:rgba(229,107,182,.12);border:1px solid rgba(229,107,182,.35)}
+.msg-act{align-self:flex-start;display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border-radius:999px;border:1px solid rgba(242,168,112,.5);background:transparent;color:#F2A870;font:inherit;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+.msg-act:hover{background:rgba(242,168,112,.1)}
+.typing{align-self:flex-start;display:flex;gap:5px;padding:14px;background:#1C1428;border-radius:16px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#B9ADC6;animation:how-dot 1.2s infinite ease-in-out}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes how-dot{0%,80%,100%{opacity:.3;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.chat-chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 12px}
+.chip{min-height:36px;padding:0 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:transparent;color:#E8DEEF;font:inherit;font-size:13px;cursor:pointer}
+.chip:hover{background:rgba(255,255,255,.07)}
+.chat-form{display:flex;gap:8px;align-items:flex-end;padding:12px;border-top:1px solid rgba(255,255,255,.08)}
+.chat-form textarea{flex:1;min-width:0;min-height:44px;max-height:120px;padding:11px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:#160F22;color:#F5EFF7;font:inherit;font-size:16px;resize:none}
+.chat-form textarea:focus{outline:2px solid #E56BB6;outline-offset:1px}
+.chat-send{width:44px;height:44px;flex:none;border:0;border-radius:50%;background:linear-gradient(135deg,#F2A870,#E56BB6 55%,#9C6BE5);color:#150A1A;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.chat-send[disabled]{opacity:.5;cursor:progress}
+.chat-foot{margin:0;padding:0 16px 12px;font-size:12px;color:#8F8399}
+.chat-foot a{color:#F2A870}
+@media (max-width:520px){.chat-panel{right:0;left:0;bottom:0;width:100%;height:min(88dvh,640px);border-radius:22px 22px 0 0}}
+@media (prefers-reduced-motion: reduce){.typing i{animation:none}}
+</style>
+</head>
+<body>
+<div style="width: 100%; overflow-x: hidden; background: #050408; color: #F5EFF7; font-family: 'Geist', system-ui, sans-serif">
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="House of Wise (HOW) — India's AI-ready student movement" />
-    <meta
-      property="og:description"
-      content="No passive learning. No empty certificates. Only capability, proof, and community. Join the AI-ready generation."
-    />
-    <meta
-      property="og:image"
-      content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/97501236-ce2d-486a-be52-3086ac4ed18f/id-preview-35005c13--6a73e21e-551e-4276-b049-8b17c0f8f025.lovable.app-1773602820874.png"
-    />
+  <!-- NAV -->
+  <header style="padding-inline: clamp(16px, 4vw, 56px); padding-block: 22px; border-bottom: 1px solid rgba(255,255,255,0.07)">
+    <nav style="max-width: 1320px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px" aria-label="Main">
+      <a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #F5EFF7">
+        <img src="/brand/how-mark.webp" alt="" style="width: 34px; height: 39px; display: block">
+        <img src="/brand/how-wordmark.webp" alt="House of Wise" style="height: 15px; width: auto; display: block">
+      </a>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 26px; font-size: 15px">
+        <a href="#manifesto" style="color: #CFC4DA; text-decoration: none">Manifesto</a>
+        <a href="#start" style="color: #CFC4DA; text-decoration: none">Chapters</a>
+        <a href="#score" style="color: #CFC4DA; text-decoration: none">HOW Score</a>
+        <a href="#builds" style="color: #CFC4DA; text-decoration: none">Builds</a>
+        <a href="#events" style="color: #CFC4DA; text-decoration: none">Events</a>
+        <a href="#colleges" style="color: #CFC4DA; text-decoration: none">For Colleges</a>
+      </div>
+      <a href="#start" class="btn-main" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; border-radius: 999px; background: linear-gradient(100deg, #F2A870, #E56BB6 50%, #9C6BE5); color: #150A1A; font-weight: 600; font-size: 15px; text-decoration: none">Start a chapter</a>
+    </nav>
+  </header>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:title" content="House of Wise (HOW) — India's AI-ready student movement" />
-    <meta
-      name="twitter:description"
-      content="No passive learning. No empty certificates. Only capability, proof, and community."
-    />
-    <meta
-      name="twitter:image"
-      content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/97501236-ce2d-486a-be52-3086ac4ed18f/id-preview-35005c13--6a73e21e-551e-4276-b049-8b17c0f8f025.lovable.app-1773602820874.png"
-    />
+  <!-- HERO -->
+  <section id="top" style="position: relative; overflow: hidden; padding-inline: clamp(16px, 4vw, 56px); padding-block: clamp(48px, 6vw, 88px) 40px">
+    <div aria-hidden="true" style="position: absolute; left: -30%; right: -30%; top: 52%; height: 60%; perspective: 520px; pointer-events: none">
+      <div class="floor" style="position: absolute; inset: 0; transform: rotateX(68deg); transform-origin: 50% 100%; background-image: linear-gradient(rgba(229,107,182,0.38) 1px, transparent 1px), linear-gradient(90deg, rgba(156,107,229,0.30) 1px, transparent 1px); background-size: 64px 64px, 64px 64px; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 45%, #000 80%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 45%, #000 80%, transparent 100%)"></div>
+    </div>
+    <div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 30%; height: 220px; background: radial-gradient(40% 60% at 70% 50%, rgba(156,107,229,0.38), transparent 70%), radial-gradient(30% 50% at 82% 60%, rgba(107,174,229,0.18), transparent 70%); filter: blur(10px); pointer-events: none"></div>
+    <div style="position: relative; max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center">
+      <div style="flex: 1.25 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 30px">
+      <div style="display: flex; align-items: center; gap: 12px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.14em; color: #F2A870">
+        <span class="pulse" style="width: 8px; height: 8px; border-radius: 50%; background: #E56BB6; display: inline-block" aria-hidden="true"></span>
+        INDIA'S AI-READY STUDENT MOVEMENT · BUILT IN BENGALURU
+      </div>
+      <h1 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: clamp(40px, 6vw, 96px); line-height: 1.0; letter-spacing: -0.035em">The future campus is being built by students. <span style="background: linear-gradient(100deg, #F2A870, #E56BB6 45%, #9C6BE5); -webkit-background-clip: text; background-clip: text; color: transparent">Start yours.</span></h1>
+        <p style="margin: 0; max-width: 580px; font-size: clamp(18px, 1.5vw, 20px); line-height: 1.55; color: #CFC4DA">House of Wise is a community of students who learn AI by building with it. No passive learning. No empty certificates. Only capability, proof, and community. Bring it to your campus.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px">
+          <a href="#start" class="btn-main" style="display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 30px; border-radius: 999px; background: linear-gradient(100deg, #F2A870, #E56BB6 50%, #9C6BE5); color: #150A1A; font-weight: 600; font-size: 17px; text-decoration: none">Start a chapter at your college
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="https://chat.whatsapp.com/" data-wa class="btn-ghost" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 26px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.2); color: #F5EFF7; font-weight: 500; font-size: 17px; text-decoration: none">Join the WhatsApp community</a>
+        </div>
+      </div>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KK8C207S18"></script>
+      <div id="hero-scene" class="scene" style="flex: 1 1 380px; min-width: 0; height: clamp(380px, 40vw, 560px); position: relative; display: flex; align-items: center; justify-content: center">
+        <div class="tilt" style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center">
+          <div aria-hidden="true" style="position: absolute; width: 46%; aspect-ratio: 1; max-width: 100%; border-radius: 50%; background: radial-gradient(circle, rgba(242,168,112,0.55), rgba(229,107,182,0.25) 40%, transparent 70%); filter: blur(18px)"></div>
+          <div class="ring" aria-hidden="true" style="width: 92%; max-width: 480px; aspect-ratio: 1"><span class="orb"></span></div>
+          <div class="ring" aria-hidden="true" style="width: 70%; max-width: 360px; aspect-ratio: 1; border-color: rgba(156,107,229,0.32); animation-duration: 16s; animation-direction: reverse"><span class="orb" style="background: #B48CEB; box-shadow: 0 0 18px #9C6BE5"></span></div>
+          <div class="cube" role="img" aria-label="The House of Wise logo as a 3D cube" style="--s: clamp(150px, 16vw, 240px)">
+            
+              <div class="lface" style="transform: rotateY(0deg) translateZ(calc(var(--s) / 2))">
+                <div class="glass"></div>
+                <div class="tex tex-R" style="transform: translateZ(calc(var(--s) * -0.07)); opacity: 0.12; filter: brightness(0.55)"></div>
+                <div class="tex tex-R" style="transform: translateZ(calc(var(--s) * -0.035)); opacity: 0.22; filter: brightness(0.7)"></div>
+                <div class="tex tex-R"></div>
+              </div>
+            
+              <div class="lface" style="transform: rotateY(-90deg) translateZ(calc(var(--s) / 2))">
+                <div class="glass"></div>
+                <div class="tex tex-L" style="transform: translateZ(calc(var(--s) * -0.07)); opacity: 0.12; filter: brightness(0.55)"></div>
+                <div class="tex tex-L" style="transform: translateZ(calc(var(--s) * -0.035)); opacity: 0.22; filter: brightness(0.7)"></div>
+                <div class="tex tex-L"></div>
+              </div>
+            
+              <div class="lface" style="transform: rotateX(90deg) translateZ(calc(var(--s) / 2))">
+                <div class="glass"></div>
+                <div class="tex tex-T" style="transform: translateZ(calc(var(--s) * -0.07)); opacity: 0.12; filter: brightness(0.55)"></div>
+                <div class="tex tex-T" style="transform: translateZ(calc(var(--s) * -0.035)); opacity: 0.22; filter: brightness(0.7)"></div>
+                <div class="tex tex-T"></div>
+              </div>
+            
+              <div class="lface" style="transform: rotateY(90deg) translateZ(calc(var(--s) / 2))">
+                <div class="glass"></div>
+                <div class="tex tex-L" style="transform: translateZ(calc(var(--s) * -0.07)); opacity: 0.12; filter: brightness(0.55)"></div>
+                <div class="tex tex-L" style="transform: translateZ(calc(var(--s) * -0.035)); opacity: 0.22; filter: brightness(0.7)"></div>
+                <div class="tex tex-L"></div>
+              </div>
+            
+              <div class="lface" style="transform: rotateY(180deg) translateZ(calc(var(--s) / 2))">
+                <div class="glass"></div>
+                <div class="tex tex-R" style="transform: translateZ(calc(var(--s) * -0.07)); opacity: 0.12; filter: brightness(0.55)"></div>
+                <div class="tex tex-R" style="transform: translateZ(calc(var(--s) * -0.035)); opacity: 0.22; filter: brightness(0.7)"></div>
+                <div class="tex tex-R"></div>
+              </div>
+            
+              <div class="lface" style="transform: rotateX(-90deg) translateZ(calc(var(--s) / 2))">
+                <div class="glass"></div>
+                <div class="tex tex-T" style="transform: translateZ(calc(var(--s) * -0.07)); opacity: 0.12; filter: brightness(0.55)"></div>
+                <div class="tex tex-T" style="transform: translateZ(calc(var(--s) * -0.035)); opacity: 0.22; filter: brightness(0.7)"></div>
+                <div class="tex tex-T"></div>
+              </div>
+            
+          </div>
+          <span class="orbit" style="--z: 200px; position: absolute; top: 10%; left: 2%; padding: 9px 14px; border-radius: 999px; background: rgba(15,10,25,0.82); border: 1px solid rgba(242,168,112,0.35); font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.12em; color: #F2A870">BUILD</span>
+          <span class="orbit" style="--z: 240px; position: absolute; top: 46%; right: 0; padding: 9px 14px; border-radius: 999px; background: rgba(15,10,25,0.82); border: 1px solid rgba(229,107,182,0.4); font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.12em; color: #EC8A94; animation-delay: -2s">PROVE · HOW SCORE</span>
+          <span class="orbit" style="--z: 200px; position: absolute; bottom: 10%; left: 10%; padding: 9px 14px; border-radius: 999px; background: linear-gradient(100deg, #F2A870, #E56BB6 50%, #9C6BE5); font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.12em; color: #150A1A; font-weight: 500; animation-delay: -4s">LEAD A CHAPTER</span>
+        </div>
+      </div>
+      </div>
 
-    <script>
-      window.dataLayer = window.dataLayer || [];
+      <figure class="zoom rise" style="margin: 0; position: relative; border-radius: 28px; overflow: hidden; height: clamp(320px, 42vw, 580px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 60px 120px -40px rgba(229,107,182,0.45)">
+        <img src="/brand/photo-build-room.jpg" alt="A packed House of Wise build night: rows of students working on laptops at long tables" style="width: 100%; height: 100%; object-fit: cover; display: block">
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,4,8,0) 45%, rgba(5,4,8,0.85) 100%)" aria-hidden="true"></div>
+        <div style="position: absolute; top: 20px; left: 20px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(5,4,8,0.7); backdrop-filter: blur(8px); font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.1em">
+          <span class="pulse" style="width: 7px; height: 7px; border-radius: 50%; background: #F2A870; display: inline-block" aria-hidden="true"></span>BUILD NIGHT · BENGALURU
+        </div>
+        <figcaption style="position: absolute; left: 24px; right: 24px; bottom: 22px; display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: flex-end; justify-content: space-between">
+          <span style="font-family: 'Geist', system-ui, sans-serif; font-size: clamp(18px, 2.2vw, 28px); font-weight: 500; max-width: 560px; line-height: 1.2">Strangers at 10am. Teammates by lunch.</span>
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #CFC4DA; letter-spacing: 0.06em"><span class="ph">[X]</span> students · <span class="ph">[X]</span> campuses · <span class="ph">[X]</span> projects shipped</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
 
-      function gtag() {
-        dataLayer.push(arguments);
+  <!-- MARQUEE -->
+  <div style="border-block: 1px solid rgba(255,255,255,0.08); overflow: hidden; padding-block: 18px; background: #0B0714" aria-label="No passive learning. No empty certificates. Only capability, proof, and community.">
+    <div class="marq" style="display: flex; width: max-content; gap: 48px; font-family: 'Geist', system-ui, sans-serif; font-size: clamp(16px, 2vw, 24px); font-weight: 500; letter-spacing: 0.02em; white-space: nowrap" aria-hidden="true">
+      <span>NO PASSIVE LEARNING</span><span style="color: #E56BB6">◆</span><span>NO EMPTY CERTIFICATES</span><span style="color: #E56BB6">◆</span><span style="color: #F2A870">ONLY CAPABILITY, PROOF &amp; COMMUNITY</span><span style="color: #E56BB6">◆</span><span>AN INSTITUTION FOR BUILDERS</span><span style="color: #E56BB6">◆</span>
+      <span>NO PASSIVE LEARNING</span><span style="color: #E56BB6">◆</span><span>NO EMPTY CERTIFICATES</span><span style="color: #E56BB6">◆</span><span style="color: #F2A870">ONLY CAPABILITY, PROOF &amp; COMMUNITY</span><span style="color: #E56BB6">◆</span><span>AN INSTITUTION FOR BUILDERS</span><span style="color: #E56BB6">◆</span>
+    </div>
+  </div>
+
+  <!-- PROOF -->
+  <section id="events" style="padding-inline: clamp(16px, 4vw, 56px); padding-block: clamp(72px, 9vw, 128px)">
+    <div style="max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-wrap: wrap; gap: 20px 64px; justify-content: space-between; align-items: flex-end">
+        <div style="display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.14em; color: #F2A870">PROOF, NOT PROMISES</span>
+          <h2 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 4.6vw, 64px); line-height: 1.04; letter-spacing: -0.025em">This is what a Saturday looks like.</h2>
+        </div>
+        <p style="margin: 0; max-width: 440px; font-size: 18px; line-height: 1.6; color: #B9ADC6">No slides-only sessions. No sitting and listening. Students show up with laptops, team up with strangers, and leave with something that works.</p>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px">
+        <figure class="zoom" style="margin: 0; flex: 1.55 1 520px; min-width: 0; position: relative; height: 440px; border-radius: 22px; overflow: hidden">
+          <img src="/brand/photo-hackathon-stage.jpg" alt="A speaker presents on stage at the Neo APAC Hackathon in Bangalore while students build at their laptops" style="width: 100%; height: 100%; object-fit: cover; display: block">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,4,8,0) 55%, rgba(5,4,8,0.9))" aria-hidden="true"></div>
+          <figcaption style="position: absolute; left: 20px; bottom: 18px; right: 20px; display: flex; flex-direction: column; gap: 4px">
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.1em; color: #F2A870">HACKATHON · BANGALORE</span>
+            <span style="font-size: 18px; font-weight: 500">Neo APAC Hackathon, Bangalore Gas Station. <span class="ph">[hosted / co-hosted / partner]</span></span>
+          </figcaption>
+        </figure>
+        <figure class="zoom" style="margin: 0; flex: 1 1 340px; min-width: 0; position: relative; height: 440px; border-radius: 22px; overflow: hidden">
+          <img src="/brand/photo-hall.jpg" alt="A long hall of students coding together under industrial pendant lights" style="width: 100%; height: 100%; object-fit: cover; display: block">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,4,8,0) 55%, rgba(5,4,8,0.9))" aria-hidden="true"></div>
+          <figcaption style="position: absolute; left: 20px; bottom: 18px; right: 20px; font-size: 18px; font-weight: 500"><span class="ph">[X]</span> students, one room, one weekend.</figcaption>
+        </figure>
+        <figure class="zoom" style="margin: 0; flex: 1 1 340px; min-width: 0; position: relative; height: 300px; border-radius: 22px; overflow: hidden">
+          <img src="/brand/photo-build-night.jpg" alt="Students at a build night in a smaller room, laptops open around a shared table" style="width: 100%; height: 100%; object-fit: cover; display: block">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,4,8,0) 45%, rgba(5,4,8,0.9))" aria-hidden="true"></div>
+          <figcaption style="position: absolute; left: 20px; bottom: 18px; right: 20px; font-size: 17px; font-weight: 500">Build night at <span class="ph">[venue]</span>. Every seat had a laptop open.</figcaption>
+        </figure>
+        <figure class="zoom" style="margin: 0; flex: 1 1 340px; min-width: 0; position: relative; height: 300px; border-radius: 22px; overflow: hidden">
+          <img src="/brand/photo-arrivals.jpg" alt="Students arriving at a House of Wise event and checking in" style="width: 100%; height: 100%; object-fit: cover; display: block">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,4,8,0) 45%, rgba(5,4,8,0.9))" aria-hidden="true"></div>
+          <figcaption style="position: absolute; left: 20px; bottom: 18px; right: 20px; font-size: 17px; font-weight: 500">First time here? Most people are.</figcaption>
+        </figure>
+        <div style="flex: 1 1 340px; min-width: 0; height: 300px; box-sizing: border-box; border-radius: 22px; padding: 28px; background: #0F0A19; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; justify-content: space-between; gap: 16px">
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.12em; color: #B9ADC6">THE COUNT SO FAR</span>
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px">
+            <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Geist', system-ui, sans-serif; font-size: 30px; font-weight: 600"><span class="ph">[X]</span></span><span style="font-size: 14px; color: #B9ADC6">students in the community</span></div>
+            <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Geist', system-ui, sans-serif; font-size: 30px; font-weight: 600"><span class="ph">[X]</span></span><span style="font-size: 14px; color: #B9ADC6">events run</span></div>
+            <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Geist', system-ui, sans-serif; font-size: 30px; font-weight: 600"><span class="ph">[X]</span></span><span style="font-size: 14px; color: #B9ADC6">projects shipped</span></div>
+            <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Geist', system-ui, sans-serif; font-size: 30px; font-weight: 600"><span class="ph">[X]</span></span><span style="font-size: 14px; color: #B9ADC6">campuses</span></div>
+          </div>
+          <a href="#events" style="font-size: 15px; font-weight: 500; text-decoration: none">See all events →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section id="manifesto" style="padding-inline: clamp(16px, 4vw, 56px); padding-block: clamp(72px, 9vw, 128px); background: #0B0714; border-block: 1px solid rgba(255,255,255,0.06)">
+    <div style="max-width: 1320px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px 80px">
+      <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+        <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.14em; color: #F2A870">THE MANIFESTO</span>
+        <h2 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: clamp(36px, 5vw, 72px); line-height: 1.0; letter-spacing: -0.03em">What we believe.</h2>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #B9ADC6; max-width: 420px">Every movement starts with a few things its people refuse to accept. Here are ours.</p>
+        <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 12px">
+          <a href="#manifesto" data-open="manifesto" class="btn-ghost" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.22); color: #F5EFF7; font-weight: 500; text-decoration: none">Sign the manifesto</a>
+          <span style="font-size: 14px; color: #B9ADC6"><span id="manifesto-count">Be one of the first to sign.</span></span>
+        </div>
+      </div>
+      <ol style="flex: 1.6 1 520px; min-width: 0; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+        <li style="display: flex; gap: 24px; padding-block: 26px; border-top: 1px solid rgba(255,255,255,0.1)">
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #E56BB6; padding-top: 6px; min-width: 28px">01</span>
+          <div style="display: flex; flex-direction: column; gap: 8px; min-width: 0"><h3 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: clamp(20px, 2vw, 26px)">Proof beats paper.</h3><p style="margin: 0; font-size: 17px; line-height: 1.6; color: #B9ADC6; max-width: 620px">A certificate says you attended. A shipped project says you can. We only count the second.</p></div>
+        </li>
+        <li style="display: flex; gap: 24px; padding-block: 26px; border-top: 1px solid rgba(255,255,255,0.1)">
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #E56BB6; padding-top: 6px; min-width: 28px">02</span>
+          <div style="display: flex; flex-direction: column; gap: 8px; min-width: 0"><h3 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: clamp(20px, 2vw, 26px)">Students shouldn't wait for permission.</h3><p style="margin: 0; font-size: 17px; line-height: 1.6; color: #B9ADC6; max-width: 620px">The best AI education on your campus doesn't need a new syllabus. It needs one student to start a chapter.</p></div>
+        </li>
+        <li style="display: flex; gap: 24px; padding-block: 26px; border-top: 1px solid rgba(255,255,255,0.1)">
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #E56BB6; padding-top: 6px; min-width: 28px">03</span>
+          <div style="display: flex; flex-direction: column; gap: 8px; min-width: 0"><h3 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: clamp(20px, 2vw, 26px)">AI is a tool you build with, not a topic you study.</h3><p style="margin: 0; font-size: 17px; line-height: 1.6; color: #B9ADC6; max-width: 620px">You learn it the way you learn to swim: by getting in.</p></div>
+        </li>
+        <li style="display: flex; gap: 24px; padding-block: 26px; border-top: 1px solid rgba(255,255,255,0.1)">
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #E56BB6; padding-top: 6px; min-width: 28px">04</span>
+          <div style="display: flex; flex-direction: column; gap: 8px; min-width: 0"><h3 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: clamp(20px, 2vw, 26px)">The future campus has no back benches.</h3><p style="margin: 0; font-size: 17px; line-height: 1.6; color: #B9ADC6; max-width: 620px">Everyone builds. Everyone ships. Everyone teaches what they figured out.</p></div>
+        </li>
+        <li style="display: flex; gap: 24px; padding-block: 26px; border-top: 1px solid rgba(255,255,255,0.1)">
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #E56BB6; padding-top: 6px; min-width: 28px">05</span>
+          <div style="display: flex; flex-direction: column; gap: 8px; min-width: 0"><h3 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: clamp(20px, 2vw, 26px)">Builders find builders.</h3><p style="margin: 0; font-size: 17px; line-height: 1.6; color: #B9ADC6; max-width: 620px">The right room changes your trajectory faster than any course. We build those rooms.</p></div>
+        </li>
+        <li style="display: flex; gap: 24px; padding-block: 26px; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1)">
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #E56BB6; padding-top: 6px; min-width: 28px">06</span>
+          <div style="display: flex; flex-direction: column; gap: 8px; min-width: 0"><h3 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: clamp(20px, 2vw, 26px)">India's AI generation will be built on campuses, not just in cities.</h3><p style="margin: 0; font-size: 17px; line-height: 1.6; color: #B9ADC6; max-width: 620px">Tier-1, tier-2, tier-3: talent is everywhere. Access shouldn't depend on your college's name.</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="padding-inline: clamp(16px, 4vw, 56px); padding-block: clamp(72px, 9vw, 128px)">
+    <div style="max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 820px">
+        <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.14em; color: #F2A870">HOW IT WORKS</span>
+        <h2 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 4.6vw, 64px); line-height: 1.04; letter-spacing: -0.025em">From curious to capable in four moves.</h2>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #B9ADC6; max-width: 620px">Curriculum, projects, mentors and the HOW Score, built around one idea: you learn AI fastest by shipping with it.</p>
+      </div>
+      <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+        <defs>
+          <linearGradient id="isoTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2A870"></stop><stop offset="1" stop-color="#E56BB6"></stop></linearGradient>
+          <g id="blk"><polygon points="30,0 60,17 30,34 0,17" fill="#4A3560"></polygon><polygon points="0,17 30,34 30,62 0,45" fill="#2C2040"></polygon><polygon points="30,34 60,17 60,45 30,62" fill="#1E152C"></polygon><polyline points="0,17 30,34 60,17" fill="none" stroke="rgba(242,168,112,0.35)" stroke-width="1"></polyline></g>
+          <g id="blkHot"><polygon points="30,0 60,17 30,34 0,17" fill="url(#isoTop)"></polygon><polygon points="0,17 30,34 30,62 0,45" fill="#C7589E"></polygon><polygon points="30,34 60,17 60,45 30,62" fill="#7E52C9"></polygon></g>
+          <g id="blkGhost"><polygon points="30,0 60,17 30,34 0,17" fill="none" stroke="rgba(255,255,255,0.16)" stroke-dasharray="3 4"></polygon><polyline points="0,17 0,45 30,62 60,45 60,17" fill="none" stroke="rgba(255,255,255,0.10)" stroke-dasharray="3 4"></polyline></g>
+        </defs>
+      </svg>
+      <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 16px">
+        <li class="lift" style="flex: 1 1 250px; min-width: 0; box-sizing: border-box; padding: 28px; border-radius: 22px; background: #0F0A19; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 14px; min-height: 260px">
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 12px"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #B9ADC6">STEP 01</span><svg viewBox="-2 -2 64 152" width="64" height="150" aria-hidden="true" style="flex: none; overflow: visible"><use href="#blk" x="0" y="84"></use><use href="#blkGhost" x="0" y="56"></use><use href="#blkGhost" x="0" y="28"></use><use href="#blkGhost" x="0" y="0"></use></svg></div>
+          <h3 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: 30px">Join</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B9ADC6">Get into the community and your first build night. Meet people who are already building, not just talking about it.</p>
+        </li>
+        <li class="lift" style="flex: 1 1 250px; min-width: 0; box-sizing: border-box; padding: 28px; border-radius: 22px; background: #0F0A19; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 14px; min-height: 260px">
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 12px"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #B9ADC6">STEP 02</span><svg viewBox="-2 -2 64 152" width="64" height="150" aria-hidden="true" style="flex: none; overflow: visible"><use href="#blk" x="0" y="84"></use><use href="#blk" x="0" y="56"></use><use href="#blkGhost" x="0" y="28"></use><use href="#blkGhost" x="0" y="0"></use></svg></div>
+          <h3 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: 30px">Build</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B9ADC6">Pick a real problem and ship a project with AI. Mentors and peers help when you get stuck.</p>
+        </li>
+        <li class="lift" style="flex: 1 1 250px; min-width: 0; box-sizing: border-box; padding: 28px; border-radius: 22px; background: #0F0A19; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 14px; min-height: 260px">
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 12px"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #B9ADC6">STEP 03</span><svg viewBox="-2 -2 64 152" width="64" height="150" aria-hidden="true" style="flex: none; overflow: visible"><use href="#blk" x="0" y="84"></use><use href="#blk" x="0" y="56"></use><use href="#blk" x="0" y="28"></use><use href="#blkGhost" x="0" y="0"></use></svg></div>
+          <h3 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: 30px">Prove</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B9ADC6">Every build adds to your HOW Score: a public, measurable record of what you can actually do.</p>
+        </li>
+        <li class="lift" style="flex: 1 1 250px; min-width: 0; box-sizing: border-box; padding: 2px; border-radius: 22px; background: linear-gradient(140deg, #F2A870, #E56BB6 50%, #9C6BE5); display: flex; min-height: 260px">
+          <div style="flex: 1; border-radius: 20px; background: #140C20; padding: 26px; display: flex; flex-direction: column; gap: 14px">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 12px"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #F2A870">STEP 04 · THE BIG ONE</span><svg viewBox="-2 -2 64 152" width="64" height="150" aria-hidden="true" style="flex: none; overflow: visible"><use href="#blk" x="0" y="84"></use><use href="#blk" x="0" y="56"></use><use href="#blk" x="0" y="28"></use><g class="bob"><use href="#blkHot" x="0" y="0"></use></g></svg></div>
+            <h3 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: 30px">Lead</h3>
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #D9CEE3">Start a chapter on your campus and bring the movement home. The best way to master something is to teach it.</p>
+            <a href="#start" style="margin-top: auto; font-weight: 600; text-decoration: none">Start at step 04 →</a>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- START A CHAPTER -->
+  <section id="start" style="padding-inline: clamp(16px, 4vw, 56px); padding-block: clamp(48px, 6vw, 96px); background: radial-gradient(60% 50% at 20% 0%, rgba(229,107,182,0.22), transparent 70%), radial-gradient(50% 50% at 90% 100%, rgba(156,107,229,0.2), transparent 70%), #050408">
+    <div style="max-width: 1320px; margin: 0 auto; box-sizing: border-box; border-radius: 36px; border: 1px solid rgba(255,255,255,0.1); background: rgba(15,10,25,0.75); padding: clamp(24px, 4vw, 64px); display: flex; flex-wrap: wrap; gap: 48px 64px">
+
+      <div style="flex: 1.1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+        <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.14em; color: #F2A870">START A CHAPTER</span>
+        <h2 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: clamp(34px, 4.8vw, 68px); line-height: 1.0; letter-spacing: -0.03em">Your campus is missing one thing. <span style="background: linear-gradient(100deg, #F2A870, #E56BB6 45%, #9C6BE5); -webkit-background-clip: text; background-clip: text; color: transparent">You.</span></h2>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #CFC4DA; max-width: 560px">You don't need to be the best coder in your class. You need to care enough to get people in a room. Start a House of Wise chapter and turn your campus into a place where students build with AI every week, not just talk about it.</p>
+
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.12em; color: #B9ADC6">WHAT YOU GET</span>
+          <ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
+            <li style="display: flex; gap: 12px; padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.04)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2A870" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M4 19V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M8 7h6"/></svg><span style="font-size: 15px; line-height: 1.5"><strong style="font-weight: 600">A 90-day playbook.</strong> <span style="color: #B9ADC6">Your first build night, your core team, how to grow.</span></span></li>
+            <li style="display: flex; gap: 12px; padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.04)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2A870" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg><span style="font-size: 15px; line-height: 1.5"><strong style="font-weight: 600">Ready-made sessions.</strong> <span style="color: #B9ADC6">Projects from the House of Wise curriculum.</span></span></li>
+            <li style="display: flex; gap: 12px; padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.04)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2A870" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg><span style="font-size: 15px; line-height: 1.5"><strong style="font-weight: 600">Mentors and builders.</strong> <span style="color: #B9ADC6">People to run sessions and judge demos.</span></span></li>
+            <li style="display: flex; gap: 12px; padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.04)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2A870" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span style="font-size: 15px; line-height: 1.5"><strong style="font-weight: 600">Event support.</strong> <span style="color: #B9ADC6">Branding, posters, and help with <span class="ph">[venue / sponsors / prizes]</span>.</span></span></li>
+            <li style="display: flex; gap: 12px; padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.04)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2A870" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M21 12a8 8 0 0 1-11.8 7L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span style="font-size: 15px; line-height: 1.5"><strong style="font-weight: 600">A seat at the table.</strong> <span style="color: #B9ADC6">Direct line to the founding team and other leads.</span></span></li>
+            <li style="display: flex; gap: 12px; padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.04)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2A870" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span style="font-size: 15px; line-height: 1.5"><strong style="font-weight: 600">Your name on the map.</strong> <span style="color: #B9ADC6">A public chapter page and a lead profile for your CV.</span></span></li>
+          </ul>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 28px 48px">
+          <div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.12em; color: #B9ADC6">WHAT IT TAKES</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <span style="padding: 8px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.16); font-size: 14px">2–3 friends</span>
+              <span style="padding: 8px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.16); font-size: 14px">One event a month</span>
+              <span style="padding: 8px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.16); font-size: 14px">Curiosity. Skill comes later.</span>
+            </div>
+          </div>
+          <div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.12em; color: #B9ADC6">HOW IT STARTS</span>
+            <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 15px">
+              <li style="display: flex; gap: 10px"><span style="font-family: 'Geist Mono', ui-monospace, monospace; color: #E56BB6">1</span>Apply in 3 minutes.</li>
+              <li style="display: flex; gap: 10px"><span style="font-family: 'Geist Mono', ui-monospace, monospace; color: #E56BB6">2</span>Get a call from the team within <span class="ph">[X]</span> days.</li>
+              <li style="display: flex; gap: 10px"><span style="font-family: 'Geist Mono', ui-monospace, monospace; color: #E56BB6">3</span>Run your first build night with our support.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div style="border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); overflow: hidden">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 18px; background: rgba(255,255,255,0.04); font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.1em; color: #B9ADC6"><span>CHAPTER BOARD</span><span><span class="ph">[X]</span> LIVE</span></div>
+          <div style="display: flex; flex-direction: column">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; padding: 14px 18px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 15px"><span>Bengaluru · <span class="ph">[College name]</span></span><span style="display: inline-flex; align-items: center; gap: 8px; color: #F2A870; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #F2A870; display: inline-block" aria-hidden="true"></span>LIVE</span></div>
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; padding: 14px 18px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 15px"><span><span class="ph">[City]</span> · <span class="ph">[College name]</span></span><span style="display: inline-flex; align-items: center; gap: 8px; color: #F2A870; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #F2A870; display: inline-block" aria-hidden="true"></span>LIVE</span></div>
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; padding: 14px 18px; border-top: 1px dashed rgba(255,255,255,0.14); font-size: 15px; color: #B9ADC6"><span>Your college</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px">WAITING FOR A LEAD</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="flex: 1 1 380px; min-width: 0">
+        <div id="chapter-success" hidden>
+          <div style="box-sizing: border-box; border-radius: 26px; padding: 36px; background: #F5EFF7; color: #1A1222; display: flex; flex-direction: column; gap: 18px">
+            <span style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #F2A870, #E56BB6 55%, #9C6BE5); display: flex; align-items: center; justify-content: center" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#150A1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+            <h3 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: 28px">You're in the queue.</h3>
+            <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4F4259">Our team will WhatsApp you within <span style="font-family: 'Geist Mono', ui-monospace, monospace">[X]</span> days. While you wait, join the community and meet other chapter leads.</p>
+            <a href="https://chat.whatsapp.com/" data-wa style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; background: #1A1222; color: #F5EFF7; font-weight: 600; text-decoration: none">Join WhatsApp</a>
+          </div>
+        </div>
+        <div id="chapter-form-wrap">
+          <form id="chapter-form" style="box-sizing: border-box; border-radius: 26px; padding: clamp(22px, 3vw, 36px); background: #F5EFF7; color: #1A1222; display: flex; flex-direction: column; gap: 16px">
+            <div style="display: flex; flex-direction: column; gap: 6px">
+              <h3 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: 24px">Start a House of Wise chapter</h3>
+              <p style="margin: 0; font-size: 15px; color: #5E5168">Takes about 3 minutes. We read every application.</p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 14px">
+              <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px"><label for="f-name" style="font-size: 14px; font-weight: 600">Your name</label><input id="f-name" name="name" maxlength="200" required style="min-height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid #D8CEE0; background: #FFFFFF; color: #1A1222"></div>
+              <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px"><label for="f-college" style="font-size: 14px; font-weight: 600">Your college</label><input id="f-college" name="college" maxlength="200" required placeholder="Start typing to search" style="min-height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid #D8CEE0; background: #FFFFFF; color: #1A1222"></div>
+              <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px"><label for="f-city" style="font-size: 14px; font-weight: 600">City</label><input id="f-city" name="city" maxlength="200" required style="min-height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid #D8CEE0; background: #FFFFFF; color: #1A1222"></div>
+              <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px"><label for="f-year" style="font-size: 14px; font-weight: 600">Year and branch</label><input id="f-year" name="year_branch" maxlength="200" placeholder="e.g. 2nd year, CSE" style="min-height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid #D8CEE0; background: #FFFFFF; color: #1A1222"></div>
+              <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px"><label for="f-wa" style="font-size: 14px; font-weight: 600">WhatsApp number</label><input id="f-wa" name="whatsapp" maxlength="20" type="tel" pattern="\+?[0-9 \(\)\-]{8,20}" title="Phone number with country code, e.g. +91 98765 43210" required style="min-height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid #D8CEE0; background: #FFFFFF; color: #1A1222"><span style="font-size: 13px; color: #5E5168">We'll reach you here, not by email.</span></div>
+              <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px"><label for="f-email" style="font-size: 14px; font-weight: 600">Email</label><input id="f-email" name="email" maxlength="200" type="email" required style="min-height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid #D8CEE0; background: #FFFFFF; color: #1A1222"></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-team" style="font-size: 14px; font-weight: 600">Who's building with you?</label><input id="f-team" name="team" maxlength="200" placeholder="Names of 1–3 friends, or &quot;just me for now&quot;" style="min-height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid #D8CEE0; background: #FFFFFF; color: #1A1222"></div>
+            <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-why" style="font-size: 14px; font-weight: 600">Why do you want to start this?</label><textarea id="f-why" name="why" maxlength="2000" rows="3" placeholder="Two or three lines is plenty" style="padding: 12px 14px; border-radius: 12px; border: 1px solid #D8CEE0; background: #FFFFFF; color: #1A1222; resize: vertical"></textarea></div>
+            <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-built" style="font-size: 14px; font-weight: 600">Anything you've built? <span style="font-weight: 400; color: #5E5168">(optional)</span></label><input id="f-built" name="built_link" maxlength="500" placeholder="A project, GitHub or LinkedIn link" style="min-height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid #D8CEE0; background: #FFFFFF; color: #1A1222"></div>
+            <div class="hp" aria-hidden="true"><input name="how_hp_x9" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore></div><p class="form-status" role="status" aria-live="polite"></p><button type="submit" class="btn-main" style="min-height: 54px; border: 0; border-radius: 999px; background: linear-gradient(100deg, #F2A870, #E56BB6 50%, #9C6BE5); color: #150A1A; font-weight: 600; font-size: 17px; cursor: pointer">Send my application</button>
+            <p style="margin: 0; font-size: 14px; color: #5E5168">Questions first? <a href="https://chat.whatsapp.com/" data-wa style="color: #A3367A; font-weight: 600">Talk to us on WhatsApp</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW SCORE -->
+  <section id="score" style="padding-inline: clamp(16px, 4vw, 56px); padding-block: clamp(72px, 9vw, 128px)">
+    <div style="max-width: 1320px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px 80px; align-items: center">
+      <div style="flex: 1.15 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+        <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.14em; color: #F2A870">THE HOW SCORE</span>
+        <h2 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: clamp(30px, 4vw, 56px); line-height: 1.06; letter-spacing: -0.025em">Your degree says where you studied. Your HOW Score says what you can do.</h2>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #B9ADC6; max-width: 580px">A measurable record of your AI capability, built from what you actually make. Every project, build night and contribution moves it. It's public, it's shareable, and it can't be bought.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
+          <div style="padding: 16px 18px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.09)"><div style="font-family: 'Geist', system-ui, sans-serif; font-size: 16px; font-weight: 500">Build</div><div style="font-size: 15px; color: #B9ADC6; margin-top: 4px">Projects shipped with AI</div></div>
+          <div style="padding: 16px 18px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.09)"><div style="font-family: 'Geist', system-ui, sans-serif; font-size: 16px; font-weight: 500">Depth</div><div style="font-size: 15px; color: #B9ADC6; margin-top: 4px">Tools, models and skills used for real</div></div>
+          <div style="padding: 16px 18px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.09)"><div style="font-family: 'Geist', system-ui, sans-serif; font-size: 16px; font-weight: 500">Community</div><div style="font-size: 15px; color: #B9ADC6; margin-top: 4px">Sessions run, people helped</div></div>
+          <div style="padding: 16px 18px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.09)"><div style="font-family: 'Geist', system-ui, sans-serif; font-size: 16px; font-weight: 500">Consistency</div><div style="font-size: 15px; color: #B9ADC6; margin-top: 4px">How often you show up and ship</div></div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center">
+          <span class="btn-ghost" style="display: inline-flex; align-items: center; min-height: 50px; padding: 0 24px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.22); color: #F5EFF7; font-weight: 500; text-decoration: none" aria-disabled="true">Starter HOW Score · coming soon</span>
+          <span style="font-size: 15px; color: #B9ADC6; max-width: 320px">Chapter leads earn Leader points for every event. Starting a chapter is the fastest way up.</span>
+        </div>
+      </div>
+
+      <div style="flex: 1 1 380px; min-width: 0; display: flex; justify-content: center; position: relative; padding-block: 24px">
+        <div aria-hidden="true" style="position: absolute; inset: 15% 10%; border-radius: 50%; background: radial-gradient(circle, rgba(229,107,182,0.32), transparent 70%); filter: blur(20px)"></div>
+        <div class="tiltcard" style="position: relative; width: 100%; max-width: 440px; padding: 2px; border-radius: 30px; box-shadow: 0 50px 100px -40px rgba(156,107,229,0.6); background: linear-gradient(150deg, #F2A870, #E56BB6 45%, #9C6BE5)">
+          <div style="border-radius: 28px; background: #0E0918; padding: 28px; display: flex; flex-direction: column; gap: 22px">
+            <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.14em; color: #B9ADC6"><span>HOW SCORE · SAMPLE</span><span>howschool.online/u/…</span></div>
+            <div style="display: flex; align-items: center; gap: 14px">
+              <span style="width: 56px; height: 56px; border-radius: 50%; background: #2A1E36; display: flex; align-items: center; justify-content: center; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; color: #F2A870" aria-hidden="true">[ ]</span>
+              <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 18px; font-weight: 600">[Student name]</span><span style="font-size: 14px; color: #B9ADC6">[College] · Chapter lead</span></div>
+            </div>
+            <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 12px">
+              <div style="display: flex; flex-direction: column"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.12em; color: #B9ADC6">SCORE</span><span style="font-family: 'Geist', system-ui, sans-serif; font-size: 64px; font-weight: 600; line-height: 1; background: linear-gradient(100deg, #F2A870, #E56BB6 55%, #9C6BE5); -webkit-background-clip: text; background-clip: text; color: transparent">[X]</span></div>
+              <span style="padding: 8px 14px; border-radius: 999px; background: rgba(242,168,112,0.14); color: #F2A870; font-family: 'Geist', system-ui, sans-serif; font-size: 13px; font-weight: 500">Leader</span>
+            </div>
+            <div style="display: flex; gap: 4px" aria-label="Levels: Explorer, Builder, Maker, Leader, Wise. Current level: Leader.">
+              <span style="flex: 1; height: 6px; border-radius: 3px; background: #F2A870"></span><span style="flex: 1; height: 6px; border-radius: 3px; background: #EC8A94"></span><span style="flex: 1; height: 6px; border-radius: 3px; background: #E56BB6"></span><span style="flex: 1; height: 6px; border-radius: 3px; background: #C26BCE"></span><span style="flex: 1; height: 6px; border-radius: 3px; background: rgba(255,255,255,0.12)"></span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; color: #B9ADC6; letter-spacing: 0.06em"><span>EXPLORER</span><span>BUILDER</span><span>MAKER</span><span style="color: #F5EFF7">LEADER</span><span>WISE</span></div>
+            <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.08)">
+              <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.12em; color: #B9ADC6; padding-top: 12px">TOP BUILDS</span>
+              <div style="display: flex; justify-content: space-between; font-size: 15px"><span>[Project one]</span><span style="color: #B9ADC6">[Month]</span></div>
+              <div style="display: flex; justify-content: space-between; font-size: 15px"><span>[Project two]</span><span style="color: #B9ADC6">[Month]</span></div>
+              <div style="display: flex; justify-content: space-between; font-size: 15px"><span>[Project three]</span><span style="color: #B9ADC6">[Month]</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILDS + EVENTS -->
+  <section id="builds" style="padding-inline: clamp(16px, 4vw, 56px); padding-block: clamp(72px, 9vw, 128px); background: #0B0714; border-block: 1px solid rgba(255,255,255,0.06)">
+    <div style="max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; gap: 72px">
+      <div style="display: flex; flex-direction: column; gap: 36px">
+        <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; justify-content: space-between; align-items: flex-end">
+          <div style="display: flex; flex-direction: column; gap: 14px">
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.14em; color: #F2A870">BUILDS</span>
+            <h2 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: clamp(30px, 4vw, 56px); line-height: 1.04; letter-spacing: -0.025em">Shipped by students. Not assigned to them.</h2>
+          </div>
+          <a href="#builds" style="font-weight: 600; text-decoration: none">Explore all builds →</a>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px">
+          <article class="lift" style="flex: 1 1 300px; min-width: 0; border-radius: 22px; overflow: hidden; background: #0F0A19; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column">
+            <div style="height: 190px; background: repeating-linear-gradient(135deg, #1D1528 0 14px, #211830 14px 28px); display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #B9ADC6">[Project screenshot]</div>
+            <div style="padding: 22px; display: flex; flex-direction: column; gap: 10px">
+              <h3 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: 20px">[Project name]</h3>
+              <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #B9ADC6">[What it does, in one plain sentence.]</p>
+              <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 13px; color: #B9ADC6; padding-top: 6px"><span>[Name], [College]</span><a href="#builds" style="font-weight: 600; text-decoration: none">See the build →</a></div>
+            </div>
+          </article>
+          <article class="lift" style="flex: 1 1 300px; min-width: 0; border-radius: 22px; overflow: hidden; background: #0F0A19; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column">
+            <div style="height: 190px; background: repeating-linear-gradient(135deg, #1D1528 0 14px, #211830 14px 28px); display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #B9ADC6">[Project screenshot]</div>
+            <div style="padding: 22px; display: flex; flex-direction: column; gap: 10px">
+              <h3 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: 20px">[Project name]</h3>
+              <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #B9ADC6">[What it does, in one plain sentence.]</p>
+              <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 13px; color: #B9ADC6; padding-top: 6px"><span>[Name], [College]</span><a href="#builds" style="font-weight: 600; text-decoration: none">See the build →</a></div>
+            </div>
+          </article>
+          <article class="lift" style="flex: 1 1 300px; min-width: 0; border-radius: 22px; overflow: hidden; background: #0F0A19; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column">
+            <div style="height: 190px; background: repeating-linear-gradient(135deg, #1D1528 0 14px, #211830 14px 28px); display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #B9ADC6">[Project screenshot]</div>
+            <div style="padding: 22px; display: flex; flex-direction: column; gap: 10px">
+              <h3 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: 20px">[Project name]</h3>
+              <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #B9ADC6">[What it does, in one plain sentence.]</p>
+              <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 13px; color: #B9ADC6; padding-top: 6px"><span>[Name], [College]</span><a href="#builds" style="font-weight: 600; text-decoration: none">See the build →</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 28px">
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: clamp(26px, 3vw, 40px); letter-spacing: -0.02em">The next room you should be in.</h2>
+          <p style="margin: 0; font-size: 17px; color: #B9ADC6">Build nights, hackathons and demo days. Show up once and you'll come back.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,0.1)">
+          <div id="events-list" style="display: contents"></div>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; padding-block: 22px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #B9ADC6" id="events-empty">
+            <span style="flex: 0 0 140px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px">NEAR YOU?</span>
+            <span style="flex: 1 1 400px; min-width: 0; font-size: 16px">Nothing on the calendar near you yet. That usually means your campus needs a chapter.</span>
+            <a href="#start" style="font-weight: 600; text-decoration: none">Start one →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPUS OF THE FUTURE -->
+  <section style="padding-inline: clamp(16px, 4vw, 56px); padding-block: clamp(72px, 9vw, 128px)">
+    <div style="max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
+      <div style="display: flex; flex-wrap: wrap; gap: 28px 80px; align-items: flex-end">
+        <div style="flex: 1.3 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.14em; color: #F2A870">CAMPUS OF THE FUTURE</span>
+          <h2 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 4.8vw, 68px); line-height: 1.02; letter-spacing: -0.03em">Imagine your campus in 2030. Now build it.</h2>
+        </div>
+        <p style="flex: 1 1 360px; min-width: 0; margin: 0; font-size: 18px; line-height: 1.6; color: #B9ADC6">Every student has built something real with AI before they graduate. Seniors mentor juniors on last weekend's build. Clubs run on demo days, not attendance sheets. House of Wise chapters are how that campus starts, one build night at a time.</p>
+      </div>
+      <div style="border-radius: 26px; border: 1px solid rgba(255,255,255,0.1); overflow: hidden">
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.12em; background: rgba(255,255,255,0.03)">
+          <span style="padding: 16px 22px; color: #B9ADC6">THE OLD CAMPUS</span><span style="padding: 16px 22px; color: #F2A870; border-left: 1px solid rgba(255,255,255,0.1)">THE CAMPUS OF THE FUTURE</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid rgba(255,255,255,0.08)"><span style="padding: 20px 22px; color: #8F8399; text-decoration: line-through; font-size: clamp(15px, 1.6vw, 20px)">Attend the lecture</span><span style="padding: 20px 22px; border-left: 1px solid rgba(255,255,255,0.1); font-family: 'Geist', system-ui, sans-serif; font-size: clamp(15px, 1.6vw, 20px)">Ship the project</span></div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid rgba(255,255,255,0.08)"><span style="padding: 20px 22px; color: #8F8399; text-decoration: line-through; font-size: clamp(15px, 1.6vw, 20px)">Collect certificates</span><span style="padding: 20px 22px; border-left: 1px solid rgba(255,255,255,0.1); font-family: 'Geist', system-ui, sans-serif; font-size: clamp(15px, 1.6vw, 20px)">Build a HOW Score</span></div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid rgba(255,255,255,0.08)"><span style="padding: 20px 22px; color: #8F8399; text-decoration: line-through; font-size: clamp(15px, 1.6vw, 20px)">Wait for the syllabus to catch up</span><span style="padding: 20px 22px; border-left: 1px solid rgba(255,255,255,0.1); font-family: 'Geist', system-ui, sans-serif; font-size: clamp(15px, 1.6vw, 20px)">Students run what's next</span></div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid rgba(255,255,255,0.08)"><span style="padding: 20px 22px; color: #8F8399; text-decoration: line-through; font-size: clamp(15px, 1.6vw, 20px)">Network at placements</span><span style="padding: 20px 22px; border-left: 1px solid rgba(255,255,255,0.1); font-family: 'Geist', system-ui, sans-serif; font-size: clamp(15px, 1.6vw, 20px)">Build with your network every week</span></div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid rgba(255,255,255,0.08)"><span style="padding: 20px 22px; color: #8F8399; text-decoration: line-through; font-size: clamp(15px, 1.6vw, 20px)">AI is a subject</span><span style="padding: 20px 22px; border-left: 1px solid rgba(255,255,255,0.1); font-family: 'Geist', system-ui, sans-serif; font-size: clamp(15px, 1.6vw, 20px); background: linear-gradient(100deg, #F2A870, #E56BB6 50%, #9C6BE5); -webkit-background-clip: text; background-clip: text; color: transparent">AI is how you work</span></div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 24px">
+        <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.14em; color: #F2A870">IN THEIR WORDS</span>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px">
+          <figure style="flex: 1 1 300px; min-width: 0; margin: 0; padding: 28px; border-radius: 22px; background: #0F0A19; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 22px">
+            <blockquote style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 400; font-size: 19px; line-height: 1.45">“[One or two sentences on what changed for them.]”</blockquote>
+            <figcaption style="font-size: 14px; color: #B9ADC6">[Name] · [Year, Branch], [College] · Chapter lead</figcaption>
+          </figure>
+          <figure style="flex: 1 1 300px; min-width: 0; margin: 0; padding: 28px; border-radius: 22px; background: #0F0A19; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 22px">
+            <blockquote style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 400; font-size: 19px; line-height: 1.45">“[The first thing they built, and the moment it clicked.]”</blockquote>
+            <figcaption style="font-size: 14px; color: #B9ADC6">[Name] · [Year, Branch], [College] · Member</figcaption>
+          </figure>
+          <figure style="flex: 1 1 300px; min-width: 0; margin: 0; padding: 28px; border-radius: 22px; background: #0F0A19; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 22px">
+            <blockquote style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 400; font-size: 19px; line-height: 1.45">“[What they'd tell someone on the fence.]”</blockquote>
+            <figcaption style="font-size: 14px; color: #B9ADC6">[Name] · [Year, Branch], [College] · Member</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR COLLEGES (light, calmer) -->
+  <section id="colleges" style="padding-inline: clamp(16px, 4vw, 56px); padding-block: clamp(72px, 9vw, 120px); background: #F5EFF7; color: #1A1222">
+    <div style="max-width: 1320px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px 80px">
+      <div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+        <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.14em; color: #A3367A">FOR COLLEGES</span>
+        <h2 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: clamp(30px, 4vw, 54px); line-height: 1.06; letter-spacing: -0.025em">Your students are ready to lead. Give them the platform.</h2>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #4F4259; max-width: 560px">House of Wise helps colleges build measurable AI readiness without rebuilding the syllabus. A student-led chapter brings our curriculum, projects and mentors to your campus. The HOW Score shows exactly where your students stand and how fast they're improving.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 6px">
+          <a href="#colleges" data-open="college" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; border-radius: 999px; background: #1A1222; color: #F5EFF7; font-weight: 600; text-decoration: none">Bring House of Wise to your college</a>
+          <a href="#colleges" data-open="brochure" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border-radius: 999px; border: 1px solid #CDBFD6; color: #1A1222; font-weight: 500; text-decoration: none">Download the college brochure</a>
+        </div>
+        <p style="margin: 0; font-size: 14px; color: #5E5168">In the room with students from <span style="font-family: 'Geist Mono', ui-monospace, monospace">[College A]</span>, <span style="font-family: 'Geist Mono', ui-monospace, monospace">[College B]</span>, <span style="font-family: 'Geist Mono', ui-monospace, monospace">[College C]</span> and <span style="font-family: 'Geist Mono', ui-monospace, monospace">[X]</span> more.</p>
+        <p style="margin: 0; font-size: 15px; color: #4F4259">A company or organisation? <a href="#colleges" data-open="partner" style="color: #A3367A; font-weight: 600">Partner with us →</a></p>
+      </div>
+      <ul style="flex: 1 1 420px; min-width: 0; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+        <li style="display: flex; flex-direction: column; gap: 4px; padding-block: 18px; border-top: 1px solid #DCD0E3"><strong style="font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: 18px">A student-led AI chapter</strong><span style="font-size: 16px; color: #4F4259">Run by your own students, backed by the House of Wise team.</span></li>
+        <li style="display: flex; flex-direction: column; gap: 4px; padding-block: 18px; border-top: 1px solid #DCD0E3"><strong style="font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: 18px">Curriculum and projects</strong><span style="font-size: 16px; color: #4F4259">Designed to sit alongside your existing courses.</span></li>
+        <li style="display: flex; flex-direction: column; gap: 4px; padding-block: 18px; border-top: 1px solid #DCD0E3"><strong style="font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: 18px">Campus readiness reports</strong><span style="font-size: 16px; color: #4F4259">Built on HOW Scores, ready for accreditation, management reviews and placements.</span></li>
+        <li style="display: flex; flex-direction: column; gap: 4px; padding-block: 18px; border-top: 1px solid #DCD0E3"><strong style="font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: 18px">Industry exposure</strong><span style="font-size: 16px; color: #4F4259">Mentors, hackathons and partner challenges.</span></li>
+        <li style="display: flex; flex-direction: column; gap: 4px; padding-block: 18px; border-top: 1px solid #DCD0E3; border-bottom: 1px solid #DCD0E3"><strong style="font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: 18px">Visibility</strong><span style="font-size: 16px; color: #4F4259">One of India's AI-ready campuses on the House of Wise map.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WIZE: COMING SOON -->
+  <section style="padding-inline: clamp(16px, 4vw, 56px); padding-block: clamp(72px, 9vw, 128px); background: radial-gradient(50% 60% at 85% 40%, rgba(156,107,229,0.18), transparent 70%), #050408">
+    <div style="max-width: 1320px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px 80px; align-items: center">
+      <div style="flex: 1.2 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+        <span style="align-self: flex-start; padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(242,168,112,0.45); color: #F2A870; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.14em">COMING SOON · WIZE</span>
+        <h2 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 4.6vw, 64px); line-height: 1.02; letter-spacing: -0.03em">Your college's own AI. On WhatsApp.</h2>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #B9ADC6; max-width: 580px">Wize gives every college its own private AI assistant inside WhatsApp. Sign in once with your college email, and from then on everything happens in one chat, answered from your own college's material.</p>
+        <div style="display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,0.1)">
+          <div style="display: flex; gap: 20px; padding-block: 18px; border-bottom: 1px solid rgba(255,255,255,0.1)"><span style="flex: 0 0 96px; font-family: 'Geist', system-ui, sans-serif; font-weight: 500; color: #F2A870">Study</span><span style="font-size: 16px; line-height: 1.55; color: #D9CEE3; min-width: 0">Answers from your own semester's notes, with the exact page. Past exam questions and a day-by-day prep plan.</span></div>
+          <div style="display: flex; gap: 20px; padding-block: 18px; border-bottom: 1px solid rgba(255,255,255,0.1)"><span style="flex: 0 0 96px; font-family: 'Geist', system-ui, sans-serif; font-weight: 500; color: #EC8A94">Teachers</span><span style="font-size: 16px; line-height: 1.55; color: #D9CEE3; min-width: 0">Send a doubt, have an email written and sent, or book office hours, without leaving WhatsApp.</span></div>
+          <div style="display: flex; gap: 20px; padding-block: 18px; border-bottom: 1px solid rgba(255,255,255,0.1)"><span style="flex: 0 0 96px; font-family: 'Geist', system-ui, sans-serif; font-weight: 500; color: #B48CEB">Campus</span><span style="font-size: 16px; line-height: 1.55; color: #D9CEE3; min-width: 0">Fest announcements, exam reminders and holiday alerts arrive on their own.</span></div>
+        </div>
+        <p style="margin: 0; font-size: 15px; color: #B9ADC6">Wize only answers from your college's material. If it isn't in your notes, it says so and offers to ask your teacher. No guessing.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+          <a href="#colleges" data-open="wize" class="btn-main" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; border-radius: 999px; background: linear-gradient(100deg, #F2A870, #E56BB6 50%, #9C6BE5); color: #150A1A; font-weight: 600; text-decoration: none">Get early access for my college</a>
+          <span style="font-size: 14px; color: #B9ADC6; max-width: 300px">Colleges with a House of Wise chapter get Wize first.</span>
+        </div>
+      </div>
+
+      <div style="flex: 1 1 320px; min-width: 0; display: flex; justify-content: center">
+        <div style="width: 100%; max-width: 330px; box-sizing: border-box; border-radius: 44px; padding: 12px; background: #1B1424; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 40px 80px -30px rgba(229,107,182,0.45)">
+          <div style="border-radius: 34px; overflow: hidden; background: #120E18; display: flex; flex-direction: column">
+            <div style="display: flex; align-items: center; gap: 10px; padding: 18px 16px 14px; background: #1E1729">
+              <span style="width: 34px; height: 34px; border-radius: 50%; background: #0B0714; border: 1px solid #6BAEE5; display: flex; align-items: center; justify-content: center; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: 13px; color: #6BAEE5" aria-hidden="true">W</span>
+              <div style="display: flex; flex-direction: column; min-width: 0"><span style="font-size: 14px; font-weight: 600">Wize – [College name]</span><span style="font-size: 11px; color: #B9ADC6">by House of Wise</span></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 16px 14px 20px; font-size: 13.5px; line-height: 1.45">
+              <div style="align-self: flex-end; max-width: 78%; padding: 10px 12px; border-radius: 14px 14px 4px 14px; background: #3A2350">Explain 3NF with an example</div>
+              <div style="align-self: flex-start; max-width: 86%; padding: 10px 12px; border-radius: 14px 14px 14px 4px; background: #241C2F; display: flex; flex-direction: column; gap: 8px">
+                <span>A table is in 3NF when every column depends only on the key. Example: move <em>dept_name</em> out of Students into a Departments table.</span>
+                <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #F2A870">Source · DBMS Unit 3, p.12</span>
+              </div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px">
+                <span style="padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.18); font-size: 12px">Simpler</span>
+                <span style="padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.18); font-size: 12px">Example</span>
+                <span style="padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.18); font-size: 12px">Past exam questions</span>
+              </div>
+              <div style="align-self: flex-end; max-width: 78%; padding: 10px 12px; border-radius: 14px 14px 4px 14px; background: #3A2350">Plan my prep for the DBMS end-sem</div>
+              <div style="align-self: flex-start; max-width: 86%; padding: 10px 12px; border-radius: 14px 14px 14px 4px; background: #241C2F">Your exam is in 9 days. Day 1: Units 1–2 and two past papers…</div>
+              <div style="align-self: center; margin-top: 4px; padding: 6px 12px; border-radius: 999px; background: rgba(242,168,112,0.12); color: #F2A870; font-size: 11.5px">Reminder · Fest registration closes tomorrow</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="padding-inline: clamp(16px, 4vw, 56px); padding-block: clamp(72px, 9vw, 120px); background: #0B0714; border-top: 1px solid rgba(255,255,255,0.06)">
+    <div style="max-width: 1320px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px 80px">
+      <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.14em; color: #F2A870">QUESTIONS</span>
+        <h2 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.06; letter-spacing: -0.025em">Before you start.</h2>
+        <p style="margin: 0; font-size: 16px; color: #B9ADC6">Still unsure? Ask us on <a href="https://chat.whatsapp.com/" data-wa>WhatsApp</a>.</p>
+      </div>
+      <div style="flex: 1.8 1 520px; min-width: 0; display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,0.1)">
+        
+          <details class="faq" name="faq" open>
+            <summary><span>Do I need to know how to code?</span><span class="faq-sign" aria-hidden="true">+</span></summary>
+            <p>No. You need curiosity and the willingness to build. Many members started with zero AI experience.</p>
+          </details>
+          <details class="faq" name="faq">
+            <summary><span>What does it cost?</span><span class="faq-sign" aria-hidden="true">+</span></summary>
+            <p>[Free / ₹X — confirm before launch.]</p>
+          </details>
+          <details class="faq" name="faq">
+            <summary><span>Can I start a chapter in my first year?</span><span class="faq-sign" aria-hidden="true">+</span></summary>
+            <p>Yes. Some of the best leads are first-years with time and energy.</p>
+          </details>
+          <details class="faq" name="faq">
+            <summary><span>What if my college won't support it?</span><span class="faq-sign" aria-hidden="true">+</span></summary>
+            <p>Start with a few friends. We'll help you approach your college once you've run your first event.</p>
+          </details>
+          <details class="faq" name="faq">
+            <summary><span>How much time does running a chapter take?</span><span class="faq-sign" aria-hidden="true">+</span></summary>
+            <p>About [X] hours a week, mostly around one event a month at the start.</p>
+          </details>
+          <details class="faq" name="faq">
+            <summary><span>Is the HOW Score recognised by employers?</span><span class="faq-sign" aria-hidden="true">+</span></summary>
+            <p>[Answer honestly. If not yet: it's a public record of your work you can share anywhere.]</p>
+          </details>
+          <details class="faq" name="faq">
+            <summary><span>Is House of Wise only in Bengaluru?</span><span class="faq-sign" aria-hidden="true">+</span></summary>
+            <p>We started here. Chapters are opening across India, and yours could be next.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section style="padding-inline: clamp(16px, 4vw, 56px); padding-block: clamp(80px, 11vw, 160px); position: relative; overflow: hidden">
+    <div style="position: absolute; inset: 0; background-image: url('/brand/photo-build-room.jpg'); background-size: cover; background-position: center; opacity: 0.18" aria-hidden="true"></div>
+    <div style="position: absolute; inset: 0; background: radial-gradient(60% 70% at 50% 100%, rgba(229,107,182,0.35), rgba(5,4,8,0.6) 60%, #050408)" aria-hidden="true"></div>
+    <div style="position: relative; max-width: 1320px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: center">
+    <div style="flex: 1.7 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+      <h2 style="margin: 0; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: clamp(36px, 6vw, 88px); line-height: 1.0; letter-spacing: -0.035em">Someone will start the movement on your campus. <span style="background: linear-gradient(100deg, #F2A870, #E56BB6 45%, #9C6BE5); -webkit-background-clip: text; background-clip: text; color: transparent">Why not you?</span></h2>
+      <p style="margin: 0; font-size: 19px; color: #CFC4DA">It takes one student, a few friends and one build night. We'll help with the rest.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px">
+        <a href="#start" class="btn-main" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 32px; border-radius: 999px; background: linear-gradient(100deg, #F2A870, #E56BB6 50%, #9C6BE5); color: #150A1A; font-weight: 600; font-size: 17px; text-decoration: none">Start a chapter</a>
+        <a href="https://chat.whatsapp.com/" data-wa class="btn-ghost" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 28px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.25); color: #F5EFF7; font-weight: 500; font-size: 17px; text-decoration: none">Join the WhatsApp community</a>
+      </div>
+    </div>
+    <div class="scene" aria-hidden="true" style="flex: 1 1 280px; min-width: 0; height: 340px; display: flex; align-items: center; justify-content: center; position: relative">
+      <div class="ring" style="width: 300px; max-width: 100%; aspect-ratio: 1"><span class="orb"></span></div>
+      <div class="cube cube-b" role="img" aria-label="The House of Wise logo as a 3D cube" style="--s: 160px">
+        
+          <div class="lface" style="transform: rotateY(0deg) translateZ(calc(var(--s) / 2))">
+            <div class="glass"></div>
+            <div class="tex tex-R" style="transform: translateZ(-6px); opacity: 0.25; filter: brightness(0.65)"></div>
+            <div class="tex tex-R"></div>
+          </div>
+        
+          <div class="lface" style="transform: rotateY(-90deg) translateZ(calc(var(--s) / 2))">
+            <div class="glass"></div>
+            <div class="tex tex-L" style="transform: translateZ(-6px); opacity: 0.25; filter: brightness(0.65)"></div>
+            <div class="tex tex-L"></div>
+          </div>
+        
+          <div class="lface" style="transform: rotateX(90deg) translateZ(calc(var(--s) / 2))">
+            <div class="glass"></div>
+            <div class="tex tex-T" style="transform: translateZ(-6px); opacity: 0.25; filter: brightness(0.65)"></div>
+            <div class="tex tex-T"></div>
+          </div>
+        
+          <div class="lface" style="transform: rotateY(90deg) translateZ(calc(var(--s) / 2))">
+            <div class="glass"></div>
+            <div class="tex tex-L" style="transform: translateZ(-6px); opacity: 0.25; filter: brightness(0.65)"></div>
+            <div class="tex tex-L"></div>
+          </div>
+        
+          <div class="lface" style="transform: rotateY(180deg) translateZ(calc(var(--s) / 2))">
+            <div class="glass"></div>
+            <div class="tex tex-R" style="transform: translateZ(-6px); opacity: 0.25; filter: brightness(0.65)"></div>
+            <div class="tex tex-R"></div>
+          </div>
+        
+          <div class="lface" style="transform: rotateX(-90deg) translateZ(calc(var(--s) / 2))">
+            <div class="glass"></div>
+            <div class="tex tex-T" style="transform: translateZ(-6px); opacity: 0.25; filter: brightness(0.65)"></div>
+            <div class="tex tex-T"></div>
+          </div>
+        
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="padding-inline: clamp(16px, 4vw, 56px); padding-block: 48px; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="max-width: 1320px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px 64px; justify-content: space-between">
+      <div style="display: flex; flex-direction: column; gap: 10px; max-width: 360px">
+        <span style="display: flex; align-items: center; gap: 12px"><img src="/brand/how-mark.webp" alt="" style="width: 40px; height: 46px; display: block"><img src="/brand/how-wordmark.webp" alt="House of Wise" style="height: 16px; width: auto; display: block"></span>
+        <span style="color: #B9ADC6; font-size: 15px">An institution for builders. Made in Bengaluru by students, for every campus in India.</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px 28px; font-size: 15px">
+        <a href="#manifesto" style="color: #CFC4DA; text-decoration: none">Manifesto</a>
+        <a href="#start" style="color: #CFC4DA; text-decoration: none">Chapters</a>
+        <a href="#score" style="color: #CFC4DA; text-decoration: none">HOW Score</a>
+        <a href="#builds" style="color: #CFC4DA; text-decoration: none">Builds</a>
+        <a href="#events" style="color: #CFC4DA; text-decoration: none">Events</a>
+        <a href="#colleges" style="color: #CFC4DA; text-decoration: none">For Colleges</a>
+        <a href="#colleges" data-open="partner" style="color: #CFC4DA; text-decoration: none">Partners</a>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 15px">
+        <a href="#top" data-social="instagram" style="color: #CFC4DA; text-decoration: none">Instagram</a>
+        <a href="#top" data-social="linkedin" style="color: #CFC4DA; text-decoration: none">LinkedIn</a>
+        <a href="#top" data-social="x" style="color: #CFC4DA; text-decoration: none">X</a>
+        <a href="https://chat.whatsapp.com/" data-wa style="color: #CFC4DA; text-decoration: none">WhatsApp</a>
+      </div>
+    </div>
+    <div style="max-width: 1320px; margin: 32px auto 0; font-size: 13px; color: #8F8399">© 2026 House of Wise · howschool.online</div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <button type="button" id="chat-open" aria-controls="chat-panel" aria-expanded="false" class="btn-main" style="position: fixed; right: 20px; bottom: 20px; z-index: 20; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 20px; border-radius: 999px; background: #F5EFF7; color: #1A1222; font-weight: 600; font-size: 15px; text-decoration: none; box-shadow: 0 16px 40px -14px rgba(0,0,0,0.6); border: 0; cursor: pointer; font-family: inherit">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.8 7L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+    Chat with us
+  </button>
+</div>
+
+<dialog id="dlg-manifesto" class="how-dialog" aria-labelledby="dlg-manifesto-title">
+  <div class="dlg-card">
+    <button type="button" class="dlg-x" data-close aria-label="Close">×</button>
+    <form class="how-form" data-kind="manifesto">
+      <h2 id="dlg-manifesto-title" class="dlg-title">Sign the manifesto</h2>
+      <p class="dlg-intro">Add your name to the students building India's AI-ready campuses.</p>
+      <div class="fld-grid"><div class="fld"><label for="m-name">Your name</label><input id="m-name" name="name" type="text" required maxlength="120"></div><div class="fld"><label for="m-email">Email</label><input id="m-email" name="email" type="email" required maxlength="200"></div><div class="fld"><label for="m-college">College <span class="opt">(optional)</span></label><input id="m-college" name="college" type="text" maxlength="200"></div><div class="fld"><label for="m-city">City <span class="opt">(optional)</span></label><input id="m-city" name="city" type="text" maxlength="100"></div></div>
+      <div class="hp" aria-hidden="true"><input name="how_hp_x9" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore></div>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <button type="submit" class="dlg-submit">Sign the manifesto</button>
+    </form>
+    <div class="dlg-ok" hidden>
+      <span class="ok-dot" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#150A1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+      <h2 class="dlg-title">You've signed.</h2>
+      <p class="dlg-intro">Welcome to the movement. Your name now counts toward the total on this page.</p>
+      <div class="ok-actions"><a href="https://chat.whatsapp.com/" data-wa class="ok-wa">Join the WhatsApp community</a><button type="button" class="ok-close" data-close>Done</button></div>
+    </div>
+  </div>
+</dialog>
+<dialog id="dlg-college" class="how-dialog" aria-labelledby="dlg-college-title">
+  <div class="dlg-card">
+    <button type="button" class="dlg-x" data-close aria-label="Close">×</button>
+    <form class="how-form" data-kind="college">
+      <h2 id="dlg-college-title" class="dlg-title">Bring House of Wise to your college</h2>
+      <p class="dlg-intro">Tell us about your campus. Our team replies within a few working days.</p>
+      <div class="fld-grid"><div class="fld"><label for="c-college">College name</label><input id="c-college" name="college_name" type="text" required maxlength="200"></div><div class="fld"><label for="c-contact">Your name</label><input id="c-contact" name="contact_person" type="text" required maxlength="120"></div><div class="fld"><label for="c-designation">Your role <span class="opt">(optional)</span></label><input id="c-designation" name="designation" type="text" placeholder="e.g. Dean, Placement Officer" maxlength="120"></div><div class="fld"><label for="c-email">Email</label><input id="c-email" name="email" type="email" required maxlength="200"></div><div class="fld"><label for="c-phone">Phone <span class="opt">(optional)</span></label><input id="c-phone" name="phone" type="tel" maxlength="20" pattern="\+?[0-9 \(\)\-]{8,20}" title="Phone number with country code, e.g. +91 98765 43210"></div><div class="fld"><label for="c-city">City <span class="opt">(optional)</span></label><input id="c-city" name="city" type="text" maxlength="100"></div><div class="fld"><label for="c-state">State <span class="opt">(optional)</span></label><input id="c-state" name="state" type="text" maxlength="100"></div><div class="fld"><label for="c-students">Number of students <span class="opt">(optional)</span></label><input id="c-students" name="student_count" type="number" min="1" max="200000"></div><div class="fld full"><label for="c-website">College website <span class="opt">(optional)</span></label><input id="c-website" name="website" type="url" placeholder="https://" maxlength="300"></div><div class="fld full"><label for="c-message">Anything we should know? <span class="opt">(optional)</span></label><textarea id="c-message" name="message" rows="3" maxlength="2000" placeholder=""></textarea></div></div>
+      <div class="hp" aria-hidden="true"><input name="how_hp_x9" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore></div>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <button type="submit" class="dlg-submit">Send enquiry</button>
+    </form>
+    <div class="dlg-ok" hidden>
+      <span class="ok-dot" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#150A1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+      <h2 class="dlg-title">Thanks, we have your enquiry.</h2>
+      <p class="dlg-intro">Our team will reach out to plan next steps with your campus.</p>
+      <div class="ok-actions"><a href="https://chat.whatsapp.com/" data-wa class="ok-wa">Join the WhatsApp community</a><button type="button" class="ok-close" data-close>Done</button></div>
+    </div>
+  </div>
+</dialog>
+<dialog id="dlg-partner" class="how-dialog" aria-labelledby="dlg-partner-title">
+  <div class="dlg-card">
+    <button type="button" class="dlg-x" data-close aria-label="Close">×</button>
+    <form class="how-form" data-kind="partner">
+      <h2 id="dlg-partner-title" class="dlg-title">Partner with House of Wise</h2>
+      <p class="dlg-intro">Sponsor events, run challenges, mentor students or hire from the community.</p>
+      <div class="fld-grid"><div class="fld"><label for="p-company">Company or organisation</label><input id="p-company" name="company_name" type="text" required maxlength="200"></div><div class="fld"><label for="p-contact">Your name</label><input id="p-contact" name="contact_person" type="text" required maxlength="120"></div><div class="fld"><label for="p-designation">Your role <span class="opt">(optional)</span></label><input id="p-designation" name="designation" type="text" maxlength="120"></div><div class="fld"><label for="p-email">Email</label><input id="p-email" name="email" type="email" required maxlength="200"></div><div class="fld"><label for="p-phone">Phone <span class="opt">(optional)</span></label><input id="p-phone" name="phone" type="tel" maxlength="20" pattern="\+?[0-9 \(\)\-]{8,20}" title="Phone number with country code, e.g. +91 98765 43210"></div><div class="fld"><label for="p-website">Website <span class="opt">(optional)</span></label><input id="p-website" name="website" type="url" placeholder="https://" maxlength="300"></div><div class="fld"><label for="p-type">Type</label><select id="p-type" name="company_type" required><option value="">Choose one</option><option value="Startup">Startup</option><option value="Company">Company</option><option value="Investor">Investor</option><option value="Non-profit">Non-profit</option><option value="Other">Other</option></select></div><div class="fld"><label for="p-interest">Interested in</label><select id="p-interest" name="partnership_interest" required><option value="">Choose one</option><option value="Sponsor events">Sponsoring events</option><option value="Run challenges">Running challenges</option><option value="Hire students">Hiring students</option><option value="Mentor">Mentoring</option><option value="Other">Something else</option></select></div><div class="fld full"><label for="p-message">Tell us more <span class="opt">(optional)</span></label><textarea id="p-message" name="message" rows="3" maxlength="2000" placeholder=""></textarea></div></div>
+      <div class="hp" aria-hidden="true"><input name="how_hp_x9" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore></div>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <button type="submit" class="dlg-submit">Send</button>
+    </form>
+    <div class="dlg-ok" hidden>
+      <span class="ok-dot" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#150A1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+      <h2 class="dlg-title">Thanks, we have your details.</h2>
+      <p class="dlg-intro">Our team will get back to you about partnering.</p>
+      <div class="ok-actions"><a href="https://chat.whatsapp.com/" data-wa class="ok-wa">Join the WhatsApp community</a><button type="button" class="ok-close" data-close>Done</button></div>
+    </div>
+  </div>
+</dialog>
+<dialog id="dlg-wize" class="how-dialog" aria-labelledby="dlg-wize-title">
+  <div class="dlg-card">
+    <button type="button" class="dlg-x" data-close aria-label="Close">×</button>
+    <form class="how-form" data-kind="wize">
+      <h2 id="dlg-wize-title" class="dlg-title">Get early access to Wize</h2>
+      <p class="dlg-intro">Your college's own AI on WhatsApp. Tell us who you are and we'll reach out when your campus can join.</p>
+      <div class="fld-grid"><div class="fld"><label for="w-name">Your name</label><input id="w-name" name="name" type="text" required maxlength="120"></div><div class="fld"><label for="w-role">You are a</label><select id="w-role" name="role" required><option value="">Choose one</option><option value="student">Student</option><option value="faculty">Faculty member</option><option value="college_admin">College leadership</option><option value="other">Other</option></select></div><div class="fld"><label for="w-college">College</label><input id="w-college" name="college" type="text" required maxlength="200"></div><div class="fld"><label for="w-email">Email</label><input id="w-email" name="email" type="email" required maxlength="200"></div><div class="fld"><label for="w-wa">WhatsApp number <span class="opt">(optional)</span></label><input id="w-wa" name="whatsapp" type="tel" maxlength="20" pattern="\+?[0-9 \(\)\-]{8,20}" title="Phone number with country code, e.g. +91 98765 43210"></div><div class="fld full chk"><label><input type="checkbox" name="has_chapter" id="w-chapter"> My college has a House of Wise chapter</label></div></div>
+      <div class="hp" aria-hidden="true"><input name="how_hp_x9" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore></div>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <button type="submit" class="dlg-submit">Join the waitlist</button>
+    </form>
+    <div class="dlg-ok" hidden>
+      <span class="ok-dot" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#150A1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+      <h2 class="dlg-title">You're on the list.</h2>
+      <p class="dlg-intro">We'll message you when Wize opens for your college.</p>
+      <div class="ok-actions"><a href="https://chat.whatsapp.com/" data-wa class="ok-wa">Join the WhatsApp community</a><button type="button" class="ok-close" data-close>Done</button></div>
+    </div>
+  </div>
+</dialog>
+<dialog id="dlg-event" class="how-dialog" aria-labelledby="dlg-event-title">
+  <div class="dlg-card">
+    <button type="button" class="dlg-x" data-close aria-label="Close">×</button>
+    <form class="how-form" data-kind="event">
+      <h2 id="dlg-event-title" class="dlg-title">Save my seat</h2>
+      <p class="dlg-intro"><span id="event-title-label">Book your place at this event.</span></p>
+      <div class="fld-grid"><input type="hidden" name="event_id" id="e-id"><div class="fld"><label for="e-name">Your name</label><input id="e-name" name="name" type="text" required maxlength="120"></div><div class="fld"><label for="e-email">Email</label><input id="e-email" name="email" type="email" required maxlength="200"></div><div class="fld"><label for="e-college">College <span class="opt">(optional)</span></label><input id="e-college" name="college" type="text" maxlength="200"></div><div class="fld"><label for="e-wa">WhatsApp number <span class="opt">(optional)</span></label><input id="e-wa" name="whatsapp" type="tel" maxlength="20" pattern="\+?[0-9 \(\)\-]{8,20}" title="Phone number with country code, e.g. +91 98765 43210"></div></div>
+      <div class="hp" aria-hidden="true"><input name="how_hp_x9" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore></div>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <button type="submit" class="dlg-submit">Save my seat</button>
+    </form>
+    <div class="dlg-ok" hidden>
+      <span class="ok-dot" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#150A1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+      <h2 class="dlg-title">Your seat is saved.</h2>
+      <p class="dlg-intro">See you there. We'll share details closer to the day.</p>
+      <div class="ok-actions"><a href="https://chat.whatsapp.com/" data-wa class="ok-wa">Join the WhatsApp community</a><button type="button" class="ok-close" data-close>Done</button></div>
+    </div>
+  </div>
+</dialog>
+<script>
+(function () {
+  var C = window.HOW_CONFIG || {};
+  var KEY = C.supabaseKey || '';
+  var READY = KEY && KEY.indexOf('PASTE_') !== 0;
+
+  // ---------- Links ----------
+  if (C.whatsappUrl) document.querySelectorAll('[data-wa]').forEach(function (a) { a.href = C.whatsappUrl; a.target = '_blank'; a.rel = 'noopener'; });
+  var socials = { instagram: C.instagramUrl, linkedin: C.linkedinUrl, x: C.xUrl };
+  document.querySelectorAll('[data-social]').forEach(function (a) {
+    var u = socials[a.getAttribute('data-social')];
+    if (u) { a.href = u; a.target = '_blank'; a.rel = 'noopener'; } else { a.hidden = true; }
+  });
+
+  // ---------- Supabase REST ----------
+  function headers(extra) {
+    var h = { apikey: KEY, 'Content-Type': 'application/json' };
+    if (KEY.indexOf('eyJ') === 0) h.Authorization = 'Bearer ' + KEY;
+    for (var k in extra) h[k] = extra[k];
+    return h;
+  }
+  function api(path, opts) {
+    opts = opts || {};
+    return fetch(C.supabaseUrl + '/rest/v1/' + path, {
+      method: opts.method || 'GET', headers: headers(opts.headers || {}),
+      body: opts.body ? JSON.stringify(opts.body) : undefined
+    });
+  }
+  function insert(table, row) {
+    if (!READY) return Promise.resolve({ ok: false, code: 'NOKEY' });
+    return api(table, { method: 'POST', headers: { Prefer: 'return=minimal' }, body: row })
+      .then(function (r) {
+        if (r.ok) return { ok: true };
+        return r.json().catch(function () { return {}; }).then(function (j) { return { ok: false, code: j.code, msg: j.message }; });
+      })
+      .catch(function () { return { ok: false, code: 'NETWORK' }; });
+  }
+  function rpc(fn, args) {
+    return api('rpc/' + fn, { method: 'POST', body: args || {} }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+  }
+
+  // ---------- Form helpers ----------
+  function val(fd, k) { var v = fd.get(k); v = v == null ? '' : String(v).trim(); return v === '' ? null : v; }
+  var ROWS = {
+    chapter: ['chapter_applications', function (f) { return {
+      name: val(f,'name'), college: val(f,'college'), city: val(f,'city'), year_branch: val(f,'year_branch'),
+      whatsapp: val(f,'whatsapp'), email: val(f,'email'), team: val(f,'team'), why: val(f,'why'), built_link: val(f,'built_link') }; }],
+    manifesto: ['manifesto_signatures', function (f) { return {
+      name: val(f,'name'), email: val(f,'email'), college: val(f,'college'), city: val(f,'city') }; }],
+    college: ['college_applications', function (f) { var n = val(f,'student_count'); return {
+      college_name: val(f,'college_name'), contact_person: val(f,'contact_person'), designation: val(f,'designation'),
+      email: val(f,'email'), phone: val(f,'phone'), city: val(f,'city'), state: val(f,'state'),
+      student_count: n ? parseInt(n, 10) : null, website: val(f,'website'), message: val(f,'message') }; }],
+    partner: ['partner_applications', function (f) { return {
+      company_name: val(f,'company_name'), contact_person: val(f,'contact_person'), designation: val(f,'designation'),
+      email: val(f,'email'), phone: val(f,'phone'), website: val(f,'website'), company_type: val(f,'company_type'),
+      partnership_interest: val(f,'partnership_interest'), message: val(f,'message') }; }],
+    wize: ['wize_waitlist', function (f) { return {
+      name: val(f,'name'), role: val(f,'role'), college: val(f,'college'), email: val(f,'email'),
+      whatsapp: val(f,'whatsapp'), has_chapter: f.get('has_chapter') === 'on' }; }],
+    event: ['event_registrations', function (f) { return {
+      event_id: val(f,'event_id'), name: val(f,'name'), email: val(f,'email'), college: val(f,'college'), whatsapp: val(f,'whatsapp') }; }]
+  };
+  var MSG = {
+    '23505': "You've already submitted this with that email. We'll be in touch.",
+    '42501': 'Bookings for this event are closed or it is full.',
+    '23514': 'One of the details looks off. Check the phone number and email, then try again.',
+    NOKEY: "This form isn't connected yet. Message us on WhatsApp instead.",
+    NETWORK: "You seem to be offline. Check your connection and try again."
+  };
+
+  function handle(form, kind, onDone) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var status = form.querySelector('.form-status');
+      var btn = form.querySelector('button[type="submit"]');
+      var fd = new FormData(form);
+      if (fd.get('how_hp_x9')) { console.warn('Spam trap filled; not sent'); onDone(); return; }          // spam bot
+      var spec = ROWS[kind];
+      btn.disabled = true; var label = btn.textContent; btn.textContent = 'Sending…';
+      status.textContent = '';
+      insert(spec[0], spec[1](fd)).then(function (res) {
+        btn.disabled = false; btn.textContent = label;
+        if (res.ok) { onDone(); return; }
+        status.textContent = MSG[res.code] || "That didn't go through. Check your details and try again, or message us on WhatsApp.";
+        if (res.code && !MSG[res.code]) console.error('Supabase error', res);
+      });
+    });
+  }
+
+  // Chapter form (on the page)
+  var chapter = document.getElementById('chapter-form');
+  if (chapter) handle(chapter, 'chapter', function () {
+    document.getElementById('chapter-form-wrap').hidden = true;
+    var ok = document.getElementById('chapter-success'); ok.hidden = false;
+    ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  // Dialog forms
+  function openDialog(key) {
+    var d = document.getElementById('dlg-' + key); if (!d) return;
+    var f = d.querySelector('form'), ok = d.querySelector('.dlg-ok');
+    f.hidden = false; ok.hidden = true; f.querySelector('.form-status').textContent = '';
+    if (typeof d.showModal === 'function') d.showModal(); else d.setAttribute('open', '');
+    var first = f.querySelector('input:not([type=hidden]),select'); if (first) first.focus();
+  }
+  window.HOW_openDialog = openDialog;
+  document.querySelectorAll('.how-dialog').forEach(function (d) {
+    var f = d.querySelector('form');
+    handle(f, f.getAttribute('data-kind'), function () {
+      f.reset(); f.hidden = true; d.querySelector('.dlg-ok').hidden = false;
+      if (f.getAttribute('data-kind') === 'manifesto') loadCount();
+      if (f.getAttribute('data-kind') === 'event') loadEvents();
+    });
+    d.querySelectorAll('[data-close]').forEach(function (b) { b.addEventListener('click', function () { d.close(); }); });
+    d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+  });
+  document.querySelectorAll('[data-open]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var key = a.getAttribute('data-open');
+      if (key === 'brochure') {
+        if (C.brochureUrl) { a.href = C.brochureUrl; a.target = '_blank'; return; }
+        key = 'college';
       }
+      e.preventDefault(); openDialog(key);
+    });
+  });
 
-      gtag("js", new Date());
+  // ---------- Live manifesto count ----------
+  function loadCount() {
+    if (!READY) return;
+    rpc('manifesto_count').then(function (n) {
+      n = parseInt(n, 10);
+      var el = document.getElementById('manifesto-count');
+      if (el && n > 0) el.textContent = n.toLocaleString('en-IN') + (n === 1 ? ' student has signed so far.' : ' students have signed so far.');
+    });
+  }
+  loadCount();
 
-      gtag("config", "G-KK8C207S18");
-    </script>
-  </head>
+  // ---------- Live events ----------
+  var fmt = new Intl.DateTimeFormat('en-IN', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' });
+  var tfmt = new Intl.DateTimeFormat('en-IN', { hour: 'numeric', minute: '2-digit', timeZone: 'Asia/Kolkata' });
+  function el(tag, cls, text) { var x = document.createElement(tag); if (cls) x.className = cls; if (text != null) x.textContent = text; return x; }
+  function loadEvents() {
+    if (!READY) return;
+    var list = document.getElementById('events-list');
+    var q = 'events?select=id,title,starts_at,city,venue,capacity&starts_at=gt.' + encodeURIComponent(new Date().toISOString()) + '&order=starts_at.asc&limit=6';
+    api(q).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }).then(function (rows) {
+      list.textContent = '';
+      document.getElementById('events-empty').hidden = rows.length > 0;
+      rows.forEach(function (ev) {
+        var d = new Date(ev.starts_at);
+        var row = el('div', 'ev-row');
+        row.appendChild(el('span', 'ev-date', fmt.format(d).toUpperCase()));
+        row.appendChild(el('span', 'ev-title', ev.title));
+        var meta = [ev.city, ev.venue].filter(Boolean).join(' · ');
+        var m = el('span', 'ev-meta', (meta ? meta + ' · ' : '') + tfmt.format(d));
+        row.appendChild(m);
+        var b = el('button', 'ev-btn', 'Save my seat'); b.type = 'button';
+        b.addEventListener('click', function () {
+          document.getElementById('e-id').value = ev.id;
+          document.getElementById('event-title-label').textContent = ev.title + ' · ' + fmt.format(d) + ', ' + tfmt.format(d);
+          openDialog('event');
+        });
+        row.appendChild(b);
+        list.appendChild(row);
+        if (ev.capacity) rpc('event_seats_left', { p_event: ev.id }).then(function (left) {
+          left = parseInt(left, 10);
+          if (left === 0) { b.disabled = true; b.textContent = 'Full'; }
+          else if (left > 0 && left <= 15) m.textContent += ' · ' + left + ' seats left';
+        });
+      });
+    });
+  }
+  loadEvents();
 
-  <body>
-    <div id="root"></div>
+  // ---------- 3D hero tilt ----------
+  var scene = document.getElementById('hero-scene');
+  if (scene && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    scene.addEventListener('mousemove', function (e) { var r = scene.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      scene.style.setProperty('--ry', (x * 26).toFixed(2) + 'deg'); scene.style.setProperty('--rx', (-y * 18).toFixed(2) + 'deg'); });
+    scene.addEventListener('mouseleave', function () { scene.style.setProperty('--ry', '0deg'); scene.style.setProperty('--rx', '0deg'); });
+  }
+})();
+</script>
 
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<section id="chat-panel" class="chat-panel" role="dialog" aria-modal="false" aria-labelledby="chat-title" hidden>
+  <header class="chat-head">
+    <span class="chat-mark" aria-hidden="true"></span>
+    <div class="chat-head-text"><h2 id="chat-title">Ask House of Wise</h2><span>AI assistant · replies in seconds</span></div>
+    <button type="button" class="chat-x" id="chat-close" aria-label="Close chat">×</button>
+  </header>
+  <div class="chat-log" id="chat-log" aria-live="polite"></div>
+  <div class="chat-chips" id="chat-chips">
+    <button type="button" class="chip">How do I start a chapter?</button>
+    <button type="button" class="chip">What is the HOW Score?</button>
+    <button type="button" class="chip">When is the next event?</button>
+    <button type="button" class="chip">What is Wize?</button>
+  </div>
+  <form class="chat-form" id="chat-form">
+    <label for="chat-input" class="sr-only">Your message</label>
+    <textarea id="chat-input" rows="1" maxlength="1000" placeholder="Ask anything about House of Wise"></textarea>
+    <button type="submit" class="chat-send" aria-label="Send">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </button>
+  </form>
+  <p class="chat-foot">AI can get things wrong. <a href="https://chat.whatsapp.com/" data-wa>Talk to a person on WhatsApp</a></p>
+</section>
+<script>
+(function () {
+  var C = window.HOW_CONFIG || {};
+  var KEY = C.supabaseKey || '';
+  var READY = KEY && KEY.indexOf('PASTE_') !== 0 && C.chatFunction;
+  var openBtn = document.getElementById('chat-open');
+  var panel = document.getElementById('chat-panel');
+  if (!openBtn || !panel) return;
+  var waUrl = C.whatsappUrl || 'https://chat.whatsapp.com/';
+  panel.querySelectorAll('[data-wa]').forEach(function (a) { a.href = waUrl; a.target = '_blank'; a.rel = 'noopener'; });
+
+  // No chat configured: the button just opens WhatsApp
+  if (!READY) {
+    openBtn.addEventListener('click', function () { window.open(waUrl, '_blank', 'noopener'); });
+    return;
+  }
+
+  var log = document.getElementById('chat-log');
+  var form = document.getElementById('chat-form');
+  var input = document.getElementById('chat-input');
+  var send = form.querySelector('.chat-send');
+  var chips = document.getElementById('chat-chips');
+  var mark = panel.querySelector('.chat-mark');
+  var logo = document.querySelector('header img');
+  if (logo && logo.src) mark.style.backgroundImage = 'url("' + logo.src + '")';
+
+  var WELCOME = "Hi! I'm the House of Wise assistant. Ask me about starting a chapter, events, the HOW Score, Wize, or bringing House of Wise to your college.";
+  var history = [];
+  try { history = JSON.parse(sessionStorage.getItem('how-chat') || '[]'); } catch (e) { history = []; }
+  function save() { try { sessionStorage.setItem('how-chat', JSON.stringify(history.slice(-20))); } catch (e) {} }
+
+  var ACTIONS = {
+    start_chapter: ['Start a chapter', function () { close(); location.hash = 'start'; document.getElementById('start').scrollIntoView({ behavior: 'smooth' }); }],
+    college_form:  ['Bring House of Wise to your college', function () { close(); window.HOW_openDialog && window.HOW_openDialog('college'); }],
+    partner_form:  ['Partner with us', function () { close(); window.HOW_openDialog && window.HOW_openDialog('partner'); }],
+    wize_form:     ['Get early access to Wize', function () { close(); window.HOW_openDialog && window.HOW_openDialog('wize'); }],
+    manifesto:     ['Sign the manifesto', function () { close(); window.HOW_openDialog && window.HOW_openDialog('manifesto'); }],
+    events:        ['See upcoming events', function () { close(); document.getElementById('events').scrollIntoView({ behavior: 'smooth' }); }],
+    whatsapp:      ['Talk to a person on WhatsApp', null]
+  };
+
+  function bubble(text, who) {
+    var d = document.createElement('div'); d.className = 'msg ' + who; d.textContent = text;
+    log.appendChild(d); log.scrollTop = log.scrollHeight; return d;
+  }
+  function actionButton(name) {
+    var a = ACTIONS[name]; if (!a) return;
+    var el;
+    if (a[1]) { el = document.createElement('button'); el.type = 'button'; el.addEventListener('click', a[1]); }
+    else { el = document.createElement('a'); el.href = waUrl; el.target = '_blank'; el.rel = 'noopener'; }
+    el.className = 'msg-act'; el.textContent = a[0] + ' →';
+    log.appendChild(el); log.scrollTop = log.scrollHeight;
+  }
+  function render() {
+    log.textContent = '';
+    bubble(WELCOME, 'bot');
+    history.forEach(function (m) {
+      bubble(m.content, m.role === 'user' ? 'me' : 'bot');
+      if (m.action) actionButton(m.action);
+    });
+    chips.hidden = history.length > 0;
+  }
+
+  function open() {
+    panel.hidden = false; openBtn.setAttribute('aria-expanded', 'true');
+    render(); setTimeout(function () { input.focus(); }, 50);
+  }
+  function close() {
+    panel.hidden = true; openBtn.setAttribute('aria-expanded', 'false'); openBtn.focus();
+  }
+  openBtn.addEventListener('click', function () { panel.hidden ? open() : close(); });
+  document.getElementById('chat-close').addEventListener('click', close);
+  panel.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+
+  var ERR = {
+    rate_limited: "You're sending messages quickly. Please wait a few minutes, or message the team on WhatsApp.",
+    busy: 'Lots of people are chatting right now. Try again in a minute, or message the team on WhatsApp.',
+    fallback: "I can't answer right now. The team can help you on WhatsApp."
+  };
+
+  var busy = false;
+  function ask(text) {
+    text = (text || '').trim();
+    if (!text || busy) return;
+    busy = true; send.disabled = true; chips.hidden = true;
+    history.push({ role: 'user', content: text.slice(0, 1000) }); save();
+    bubble(text, 'me'); input.value = ''; input.style.height = '';
+    var t = document.createElement('div'); t.className = 'typing'; t.setAttribute('aria-label', 'Assistant is typing');
+    t.innerHTML = '<i></i><i></i><i></i>'; log.appendChild(t); log.scrollTop = log.scrollHeight;
+
+    var headers = { apikey: KEY, Authorization: 'Bearer ' + KEY, 'Content-Type': 'application/json' };
+    var payload = history.slice(-12).map(function (m) { return { role: m.role, content: m.content }; });
+    fetch(C.supabaseUrl + '/functions/v1/' + C.chatFunction, { method: 'POST', headers: headers, body: JSON.stringify({ messages: payload }) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { j._status = r.status; return j; }); })
+      .catch(function () { return { error: 'network' }; })
+      .then(function (j) {
+        t.remove(); busy = false; send.disabled = false;
+        if (j && j.reply) {
+          var action = j.actions && j.actions[0];
+          history.push({ role: 'assistant', content: j.reply, action: action || null }); save();
+          bubble(j.reply, 'bot'); if (action) actionButton(action);
+        } else {
+          if (j && j.error) console.warn('Chat error', j.error, j._status || '');
+          history.pop(); save();
+          var e = document.createElement('div'); e.className = 'msg err'; e.textContent = ERR[j && j.error] || ERR.fallback;
+          log.appendChild(e); actionButton('whatsapp');
+        }
+        input.focus();
+      });
+  }
+
+  form.addEventListener('submit', function (e) { e.preventDefault(); ask(input.value); });
+  input.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(input.value); } });
+  input.addEventListener('input', function () { input.style.height = ''; input.style.height = Math.min(input.scrollHeight, 120) + 'px'; });
+  chips.querySelectorAll('.chip').forEach(function (c) { c.addEventListener('click', function () { ask(c.textContent); }); });
+})();
+</script>
+</body>
 </html>
